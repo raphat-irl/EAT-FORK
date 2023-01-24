@@ -1,0 +1,995 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33E2716232816BFADC4C0D51 /* Pods_EAT_FORKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F60CD5BDB41333B8810D10E /* Pods_EAT_FORKTests.framework */; };
+		8E73FD53BD3B1AF42B72A32B /* Pods_EAT_FORK_EAT_FORKUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3BA3B32B22461AC7C6D097 /* Pods_EAT_FORK_EAT_FORKUITests.framework */; };
+		AA587AD886DB55B801579C73 /* Pods_EAT_FORK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6079BAE01146A29306E06BC8 /* Pods_EAT_FORK.framework */; };
+		FB039BC9297BC38600D09BC1 /* BillPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB039BC8297BC38600D09BC1 /* BillPopUpView.xib */; };
+		FB5F620D2971240B0037596D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB5F62042971240B0037596D /* Inter-Regular.ttf */; };
+		FB5F620F2971240B0037596D /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB5F62062971240B0037596D /* Inter-Bold.ttf */; };
+		FB5F621629716DA60037596D /* LoadingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F621529716DA60037596D /* LoadingProgress.swift */; };
+		FB5F621829716DB90037596D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F621729716DB90037596D /* View.swift */; };
+		FBD1356D2972887100793CCE /* PaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD135672972887100793CCE /* PaymentPresenter.swift */; };
+		FBD1356E2972887100793CCE /* PaymentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD135682972887100793CCE /* PaymentWorker.swift */; };
+		FBD1356F2972887100793CCE /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD135692972887100793CCE /* PaymentRouter.swift */; };
+		FBD135702972887100793CCE /* PaymentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1356A2972887100793CCE /* PaymentModels.swift */; };
+		FBD135712972887100793CCE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1356B2972887100793CCE /* PaymentViewController.swift */; };
+		FBD135722972887100793CCE /* PaymentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1356C2972887100793CCE /* PaymentInteractor.swift */; };
+		FBD13575297288F600793CCE /* PaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD13574297288F600793CCE /* PaymentTableViewCell.swift */; };
+		FBD135772972890E00793CCE /* PaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD135762972890E00793CCE /* PaymentTableViewCell.xib */; };
+		FBD1357D29729BD900793CCE /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1357C29729BD900793CCE /* TypeAlias.swift */; };
+		FBD1358029729BFF00793CCE /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1357F29729BFF00793CCE /* APIRouter.swift */; };
+		FBD1358229729C2200793CCE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1358129729C2200793CCE /* APIClient.swift */; };
+		FBD135852972A69100793CCE /* MenuNetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD135842972A69100793CCE /* MenuNetworkAPI.swift */; };
+		FBD135872972A6E800793CCE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD135862972A6E800793CCE /* Request.swift */; };
+		FBD135892972A6F400793CCE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD135882972A6F400793CCE /* Response.swift */; };
+		FBD7EB65296FF839006D82D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB64296FF839006D82D9 /* AppDelegate.swift */; };
+		FBD7EB67296FF839006D82D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB66296FF839006D82D9 /* SceneDelegate.swift */; };
+		FBD7EB69296FF839006D82D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB68296FF839006D82D9 /* ViewController.swift */; };
+		FBD7EB6C296FF839006D82D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD7EB6A296FF839006D82D9 /* Main.storyboard */; };
+		FBD7EB6E296FF83B006D82D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD7EB6D296FF83B006D82D9 /* Assets.xcassets */; };
+		FBD7EB71296FF83B006D82D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD7EB6F296FF83B006D82D9 /* LaunchScreen.storyboard */; };
+		FBD7EB7C296FF83B006D82D9 /* EAT_FORKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB7B296FF83B006D82D9 /* EAT_FORKTests.swift */; };
+		FBD7EB86296FF83B006D82D9 /* EAT_FORKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB85296FF83B006D82D9 /* EAT_FORKUITests.swift */; };
+		FBD7EB88296FF83B006D82D9 /* EAT_FORKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB87296FF83B006D82D9 /* EAT_FORKUITestsLaunchTests.swift */; };
+		FBD7EB9B29705373006D82D9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB9529705373006D82D9 /* MainPresenter.swift */; };
+		FBD7EB9C29705373006D82D9 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB9629705373006D82D9 /* MainWorker.swift */; };
+		FBD7EB9D29705373006D82D9 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB9729705373006D82D9 /* MainRouter.swift */; };
+		FBD7EB9E29705373006D82D9 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB9829705373006D82D9 /* MainModels.swift */; };
+		FBD7EB9F29705373006D82D9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB9929705373006D82D9 /* MainViewController.swift */; };
+		FBD7EBA029705373006D82D9 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EB9A29705373006D82D9 /* MainInteractor.swift */; };
+		FBD7EBA9297053AF006D82D9 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EBA3297053AF006D82D9 /* DetailPresenter.swift */; };
+		FBD7EBAA297053AF006D82D9 /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EBA4297053AF006D82D9 /* DetailWorker.swift */; };
+		FBD7EBAB297053AF006D82D9 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EBA5297053AF006D82D9 /* DetailRouter.swift */; };
+		FBD7EBAC297053AF006D82D9 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EBA6297053AF006D82D9 /* DetailModels.swift */; };
+		FBD7EBAD297053AF006D82D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EBA7297053AF006D82D9 /* DetailViewController.swift */; };
+		FBD7EBAE297053AF006D82D9 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EBA8297053AF006D82D9 /* DetailInteractor.swift */; };
+		FBD7EBB2297053D9006D82D9 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD7EBB1297053D9006D82D9 /* MainTableViewCell.xib */; };
+		FBD7EBB4297053E6006D82D9 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EBB3297053E6006D82D9 /* MainTableViewCell.swift */; };
+		FBD7EBB6297053F5006D82D9 /* MainColletionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD7EBB5297053F5006D82D9 /* MainColletionViewCell.xib */; };
+		FBD7EBB829705401006D82D9 /* MainColletionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7EBB729705401006D82D9 /* MainColletionViewCell.swift */; };
+		FBF91F0B297AC91F009A30F1 /* BillPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF91F0A297AC91F009A30F1 /* BillPopUpView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBD7EB78296FF83B006D82D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBD7EB59296FF839006D82D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBD7EB60296FF839006D82D9;
+			remoteInfo = "EAT&FORK";
+		};
+		FBD7EB82296FF83B006D82D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBD7EB59296FF839006D82D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBD7EB60296FF839006D82D9;
+			remoteInfo = "EAT&FORK";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E125332A35E7A4D85A4FBBE /* Pods-EAT&FORKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EAT&FORKTests.release.xcconfig"; path = "Target Support Files/Pods-EAT&FORKTests/Pods-EAT&FORKTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F60CD5BDB41333B8810D10E /* Pods_EAT_FORKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EAT_FORKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6079BAE01146A29306E06BC8 /* Pods_EAT_FORK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EAT_FORK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3BA3B32B22461AC7C6D097 /* Pods_EAT_FORK_EAT_FORKUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EAT_FORK_EAT_FORKUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75CAC7F9F59FDBB5C82716C4 /* Pods-EAT&FORK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EAT&FORK.debug.xcconfig"; path = "Target Support Files/Pods-EAT&FORK/Pods-EAT&FORK.debug.xcconfig"; sourceTree = "<group>"; };
+		889F950F25A2AE1D71ECFD82 /* Pods-EAT&FORK-EAT&FORKUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EAT&FORK-EAT&FORKUITests.debug.xcconfig"; path = "Target Support Files/Pods-EAT&FORK-EAT&FORKUITests/Pods-EAT&FORK-EAT&FORKUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A288518110B2F3B821240AFB /* Pods-EAT&FORK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EAT&FORK.release.xcconfig"; path = "Target Support Files/Pods-EAT&FORK/Pods-EAT&FORK.release.xcconfig"; sourceTree = "<group>"; };
+		AFF51D9406D65D4CEA77F67C /* Pods-EAT&FORKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EAT&FORKTests.debug.xcconfig"; path = "Target Support Files/Pods-EAT&FORKTests/Pods-EAT&FORKTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B80B9160B01292A73940316C /* Pods-EAT&FORK-EAT&FORKUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EAT&FORK-EAT&FORKUITests.release.xcconfig"; path = "Target Support Files/Pods-EAT&FORK-EAT&FORKUITests/Pods-EAT&FORK-EAT&FORKUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FB039BC8297BC38600D09BC1 /* BillPopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillPopUpView.xib; sourceTree = "<group>"; };
+		FB5F62042971240B0037596D /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		FB5F62062971240B0037596D /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		FB5F621529716DA60037596D /* LoadingProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProgress.swift; sourceTree = "<group>"; };
+		FB5F621729716DB90037596D /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		FBD135672972887100793CCE /* PaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPresenter.swift; sourceTree = "<group>"; };
+		FBD135682972887100793CCE /* PaymentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWorker.swift; sourceTree = "<group>"; };
+		FBD135692972887100793CCE /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
+		FBD1356A2972887100793CCE /* PaymentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModels.swift; sourceTree = "<group>"; };
+		FBD1356B2972887100793CCE /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		FBD1356C2972887100793CCE /* PaymentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInteractor.swift; sourceTree = "<group>"; };
+		FBD13574297288F600793CCE /* PaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTableViewCell.swift; sourceTree = "<group>"; };
+		FBD135762972890E00793CCE /* PaymentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentTableViewCell.xib; sourceTree = "<group>"; };
+		FBD1357C29729BD900793CCE /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
+		FBD1357F29729BFF00793CCE /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		FBD1358129729C2200793CCE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FBD135842972A69100793CCE /* MenuNetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNetworkAPI.swift; sourceTree = "<group>"; };
+		FBD135862972A6E800793CCE /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FBD135882972A6F400793CCE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		FBD7EB61296FF839006D82D9 /* EAT&FORK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EAT&FORK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD7EB64296FF839006D82D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBD7EB66296FF839006D82D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FBD7EB68296FF839006D82D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FBD7EB6B296FF839006D82D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBD7EB6D296FF83B006D82D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBD7EB70296FF83B006D82D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FBD7EB72296FF83B006D82D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBD7EB77296FF83B006D82D9 /* EAT&FORKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EAT&FORKTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD7EB7B296FF83B006D82D9 /* EAT_FORKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAT_FORKTests.swift; sourceTree = "<group>"; };
+		FBD7EB81296FF83B006D82D9 /* EAT&FORKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EAT&FORKUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD7EB85296FF83B006D82D9 /* EAT_FORKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAT_FORKUITests.swift; sourceTree = "<group>"; };
+		FBD7EB87296FF83B006D82D9 /* EAT_FORKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAT_FORKUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FBD7EB9529705373006D82D9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		FBD7EB9629705373006D82D9 /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
+		FBD7EB9729705373006D82D9 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		FBD7EB9829705373006D82D9 /* MainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
+		FBD7EB9929705373006D82D9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FBD7EB9A29705373006D82D9 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		FBD7EBA3297053AF006D82D9 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		FBD7EBA4297053AF006D82D9 /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
+		FBD7EBA5297053AF006D82D9 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		FBD7EBA6297053AF006D82D9 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
+		FBD7EBA7297053AF006D82D9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FBD7EBA8297053AF006D82D9 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		FBD7EBB1297053D9006D82D9 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		FBD7EBB3297053E6006D82D9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		FBD7EBB5297053F5006D82D9 /* MainColletionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainColletionViewCell.xib; sourceTree = "<group>"; };
+		FBD7EBB729705401006D82D9 /* MainColletionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainColletionViewCell.swift; sourceTree = "<group>"; };
+		FBF91F0A297AC91F009A30F1 /* BillPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillPopUpView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBD7EB5E296FF839006D82D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA587AD886DB55B801579C73 /* Pods_EAT_FORK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD7EB74296FF83B006D82D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33E2716232816BFADC4C0D51 /* Pods_EAT_FORKTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD7EB7E296FF83B006D82D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E73FD53BD3B1AF42B72A32B /* Pods_EAT_FORK_EAT_FORKUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CAB992E7380C90A5470CFF91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75CAC7F9F59FDBB5C82716C4 /* Pods-EAT&FORK.debug.xcconfig */,
+				A288518110B2F3B821240AFB /* Pods-EAT&FORK.release.xcconfig */,
+				889F950F25A2AE1D71ECFD82 /* Pods-EAT&FORK-EAT&FORKUITests.debug.xcconfig */,
+				B80B9160B01292A73940316C /* Pods-EAT&FORK-EAT&FORKUITests.release.xcconfig */,
+				AFF51D9406D65D4CEA77F67C /* Pods-EAT&FORKTests.debug.xcconfig */,
+				2E125332A35E7A4D85A4FBBE /* Pods-EAT&FORKTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F51C9DE8B1C346A418DFF4B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6079BAE01146A29306E06BC8 /* Pods_EAT_FORK.framework */,
+				6D3BA3B32B22461AC7C6D097 /* Pods_EAT_FORK_EAT_FORKUITests.framework */,
+				2F60CD5BDB41333B8810D10E /* Pods_EAT_FORKTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB5F6201297123E90037596D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				FB5F62062971240B0037596D /* Inter-Bold.ttf */,
+				FB5F62042971240B0037596D /* Inter-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		FB5F621429716D740037596D /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				FB5F621529716DA60037596D /* LoadingProgress.swift */,
+				FB5F621729716DB90037596D /* View.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		FBD135662972883B00793CCE /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				FBD135672972887100793CCE /* PaymentPresenter.swift */,
+				FBD135682972887100793CCE /* PaymentWorker.swift */,
+				FBD135692972887100793CCE /* PaymentRouter.swift */,
+				FBD1356A2972887100793CCE /* PaymentModels.swift */,
+				FBD1356B2972887100793CCE /* PaymentViewController.swift */,
+				FBD1356C2972887100793CCE /* PaymentInteractor.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		FBD13573297288E000793CCE /* PaymentTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FBD13574297288F600793CCE /* PaymentTableViewCell.swift */,
+				FBD135762972890E00793CCE /* PaymentTableViewCell.xib */,
+			);
+			path = PaymentTableViewCell;
+			sourceTree = "<group>";
+		};
+		FBD135782972948F00793CCE /* BillAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				FBF91F0A297AC91F009A30F1 /* BillPopUpView.swift */,
+				FB039BC8297BC38600D09BC1 /* BillPopUpView.xib */,
+			);
+			path = BillAlertView;
+			sourceTree = "<group>";
+		};
+		FBD1357B29729BC900793CCE /* TypeAlias */ = {
+			isa = PBXGroup;
+			children = (
+				FBD1357C29729BD900793CCE /* TypeAlias.swift */,
+			);
+			path = TypeAlias;
+			sourceTree = "<group>";
+		};
+		FBD1357E29729BEA00793CCE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FBD1357F29729BFF00793CCE /* APIRouter.swift */,
+				FBD1358129729C2200793CCE /* APIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FBD135832972A67B00793CCE /* NetworkAPI */ = {
+			isa = PBXGroup;
+			children = (
+				FBD135842972A69100793CCE /* MenuNetworkAPI.swift */,
+				FBD135862972A6E800793CCE /* Request.swift */,
+				FBD135882972A6F400793CCE /* Response.swift */,
+			);
+			path = NetworkAPI;
+			sourceTree = "<group>";
+		};
+		FBD7EB58296FF839006D82D9 = {
+			isa = PBXGroup;
+			children = (
+				FBD7EB63296FF839006D82D9 /* EAT&FORK */,
+				FBD7EB7A296FF83B006D82D9 /* EAT&FORKTests */,
+				FBD7EB84296FF83B006D82D9 /* EAT&FORKUITests */,
+				FBD7EB62296FF839006D82D9 /* Products */,
+				CAB992E7380C90A5470CFF91 /* Pods */,
+				F51C9DE8B1C346A418DFF4B6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FBD7EB62296FF839006D82D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBD7EB61296FF839006D82D9 /* EAT&FORK.app */,
+				FBD7EB77296FF83B006D82D9 /* EAT&FORKTests.xctest */,
+				FBD7EB81296FF83B006D82D9 /* EAT&FORKUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBD7EB63296FF839006D82D9 /* EAT&FORK */ = {
+			isa = PBXGroup;
+			children = (
+				FBD1357E29729BEA00793CCE /* API */,
+				FBD1357B29729BC900793CCE /* TypeAlias */,
+				FBD135782972948F00793CCE /* BillAlertView */,
+				FBD13573297288E000793CCE /* PaymentTableViewCell */,
+				FBD7EBB0297053C1006D82D9 /* MainColletionViewCell */,
+				FBD7EBAF297053B4006D82D9 /* MainTableViewCell */,
+				FBD135662972883B00793CCE /* Payment */,
+				FBD7EBA22970539C006D82D9 /* Detail */,
+				FBD7EB942970534C006D82D9 /* Main */,
+				FBD7EB64296FF839006D82D9 /* AppDelegate.swift */,
+				FBD7EB66296FF839006D82D9 /* SceneDelegate.swift */,
+				FBD7EB68296FF839006D82D9 /* ViewController.swift */,
+				FBD7EB6A296FF839006D82D9 /* Main.storyboard */,
+				FBD7EB6D296FF83B006D82D9 /* Assets.xcassets */,
+				FB5F621429716D740037596D /* Widget */,
+				FB5F6201297123E90037596D /* Font */,
+				FBD7EB6F296FF83B006D82D9 /* LaunchScreen.storyboard */,
+				FBD7EB72296FF83B006D82D9 /* Info.plist */,
+			);
+			path = "EAT&FORK";
+			sourceTree = "<group>";
+		};
+		FBD7EB7A296FF83B006D82D9 /* EAT&FORKTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBD7EB7B296FF83B006D82D9 /* EAT_FORKTests.swift */,
+			);
+			path = "EAT&FORKTests";
+			sourceTree = "<group>";
+		};
+		FBD7EB84296FF83B006D82D9 /* EAT&FORKUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FBD7EB85296FF83B006D82D9 /* EAT_FORKUITests.swift */,
+				FBD7EB87296FF83B006D82D9 /* EAT_FORKUITestsLaunchTests.swift */,
+			);
+			path = "EAT&FORKUITests";
+			sourceTree = "<group>";
+		};
+		FBD7EB942970534C006D82D9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FBD135832972A67B00793CCE /* NetworkAPI */,
+				FBD7EB9529705373006D82D9 /* MainPresenter.swift */,
+				FBD7EB9629705373006D82D9 /* MainWorker.swift */,
+				FBD7EB9729705373006D82D9 /* MainRouter.swift */,
+				FBD7EB9829705373006D82D9 /* MainModels.swift */,
+				FBD7EB9929705373006D82D9 /* MainViewController.swift */,
+				FBD7EB9A29705373006D82D9 /* MainInteractor.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FBD7EBA22970539C006D82D9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FBD7EBA3297053AF006D82D9 /* DetailPresenter.swift */,
+				FBD7EBA4297053AF006D82D9 /* DetailWorker.swift */,
+				FBD7EBA5297053AF006D82D9 /* DetailRouter.swift */,
+				FBD7EBA6297053AF006D82D9 /* DetailModels.swift */,
+				FBD7EBA7297053AF006D82D9 /* DetailViewController.swift */,
+				FBD7EBA8297053AF006D82D9 /* DetailInteractor.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		FBD7EBAF297053B4006D82D9 /* MainTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FBD7EBB1297053D9006D82D9 /* MainTableViewCell.xib */,
+				FBD7EBB3297053E6006D82D9 /* MainTableViewCell.swift */,
+			);
+			path = MainTableViewCell;
+			sourceTree = "<group>";
+		};
+		FBD7EBB0297053C1006D82D9 /* MainColletionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FBD7EBB5297053F5006D82D9 /* MainColletionViewCell.xib */,
+				FBD7EBB729705401006D82D9 /* MainColletionViewCell.swift */,
+			);
+			path = MainColletionViewCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBD7EB60296FF839006D82D9 /* EAT&FORK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBD7EB8B296FF83B006D82D9 /* Build configuration list for PBXNativeTarget "EAT&FORK" */;
+			buildPhases = (
+				639F4B022E8E5B1AC8EDA4DA /* [CP] Check Pods Manifest.lock */,
+				FBD7EB5D296FF839006D82D9 /* Sources */,
+				FBD7EB5E296FF839006D82D9 /* Frameworks */,
+				FBD7EB5F296FF839006D82D9 /* Resources */,
+				01DDA50A63361A3A4EDC985E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EAT&FORK";
+			productName = "EAT&FORK";
+			productReference = FBD7EB61296FF839006D82D9 /* EAT&FORK.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBD7EB76296FF83B006D82D9 /* EAT&FORKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBD7EB8E296FF83B006D82D9 /* Build configuration list for PBXNativeTarget "EAT&FORKTests" */;
+			buildPhases = (
+				1D78C35B54813E9AB6FE079D /* [CP] Check Pods Manifest.lock */,
+				FBD7EB73296FF83B006D82D9 /* Sources */,
+				FBD7EB74296FF83B006D82D9 /* Frameworks */,
+				FBD7EB75296FF83B006D82D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBD7EB79296FF83B006D82D9 /* PBXTargetDependency */,
+			);
+			name = "EAT&FORKTests";
+			productName = "EAT&FORKTests";
+			productReference = FBD7EB77296FF83B006D82D9 /* EAT&FORKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FBD7EB80296FF83B006D82D9 /* EAT&FORKUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBD7EB91296FF83B006D82D9 /* Build configuration list for PBXNativeTarget "EAT&FORKUITests" */;
+			buildPhases = (
+				D568A686544ABC99714889D9 /* [CP] Check Pods Manifest.lock */,
+				FBD7EB7D296FF83B006D82D9 /* Sources */,
+				FBD7EB7E296FF83B006D82D9 /* Frameworks */,
+				FBD7EB7F296FF83B006D82D9 /* Resources */,
+				EB1E97A0ED33548A3CDECA0F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBD7EB83296FF83B006D82D9 /* PBXTargetDependency */,
+			);
+			name = "EAT&FORKUITests";
+			productName = "EAT&FORKUITests";
+			productReference = FBD7EB81296FF83B006D82D9 /* EAT&FORKUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBD7EB59296FF839006D82D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					FBD7EB60296FF839006D82D9 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					FBD7EB76296FF83B006D82D9 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = FBD7EB60296FF839006D82D9;
+					};
+					FBD7EB80296FF83B006D82D9 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = FBD7EB60296FF839006D82D9;
+					};
+				};
+			};
+			buildConfigurationList = FBD7EB5C296FF839006D82D9 /* Build configuration list for PBXProject "EAT&FORK" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBD7EB58296FF839006D82D9;
+			productRefGroup = FBD7EB62296FF839006D82D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBD7EB60296FF839006D82D9 /* EAT&FORK */,
+				FBD7EB76296FF83B006D82D9 /* EAT&FORKTests */,
+				FBD7EB80296FF83B006D82D9 /* EAT&FORKUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBD7EB5F296FF839006D82D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD7EB71296FF83B006D82D9 /* LaunchScreen.storyboard in Resources */,
+				FBD7EB6E296FF83B006D82D9 /* Assets.xcassets in Resources */,
+				FBD135772972890E00793CCE /* PaymentTableViewCell.xib in Resources */,
+				FBD7EBB2297053D9006D82D9 /* MainTableViewCell.xib in Resources */,
+				FBD7EB6C296FF839006D82D9 /* Main.storyboard in Resources */,
+				FB5F620F2971240B0037596D /* Inter-Bold.ttf in Resources */,
+				FB039BC9297BC38600D09BC1 /* BillPopUpView.xib in Resources */,
+				FBD7EBB6297053F5006D82D9 /* MainColletionViewCell.xib in Resources */,
+				FB5F620D2971240B0037596D /* Inter-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD7EB75296FF83B006D82D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD7EB7F296FF83B006D82D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01DDA50A63361A3A4EDC985E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EAT&FORK/Pods-EAT&FORK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EAT&FORK/Pods-EAT&FORK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EAT&FORK/Pods-EAT&FORK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D78C35B54813E9AB6FE079D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EAT&FORKTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		639F4B022E8E5B1AC8EDA4DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EAT&FORK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D568A686544ABC99714889D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EAT&FORK-EAT&FORKUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB1E97A0ED33548A3CDECA0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EAT&FORK-EAT&FORKUITests/Pods-EAT&FORK-EAT&FORKUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EAT&FORK-EAT&FORKUITests/Pods-EAT&FORK-EAT&FORKUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EAT&FORK-EAT&FORKUITests/Pods-EAT&FORK-EAT&FORKUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBD7EB5D296FF839006D82D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD7EB69296FF839006D82D9 /* ViewController.swift in Sources */,
+				FBD7EB65296FF839006D82D9 /* AppDelegate.swift in Sources */,
+				FBD135722972887100793CCE /* PaymentInteractor.swift in Sources */,
+				FBD7EBAA297053AF006D82D9 /* DetailWorker.swift in Sources */,
+				FBD135852972A69100793CCE /* MenuNetworkAPI.swift in Sources */,
+				FBD1356F2972887100793CCE /* PaymentRouter.swift in Sources */,
+				FBD135872972A6E800793CCE /* Request.swift in Sources */,
+				FBD1358229729C2200793CCE /* APIClient.swift in Sources */,
+				FBD7EB67296FF839006D82D9 /* SceneDelegate.swift in Sources */,
+				FBD13575297288F600793CCE /* PaymentTableViewCell.swift in Sources */,
+				FBD7EBA9297053AF006D82D9 /* DetailPresenter.swift in Sources */,
+				FBD7EB9C29705373006D82D9 /* MainWorker.swift in Sources */,
+				FB5F621829716DB90037596D /* View.swift in Sources */,
+				FBD7EBAE297053AF006D82D9 /* DetailInteractor.swift in Sources */,
+				FBD7EB9B29705373006D82D9 /* MainPresenter.swift in Sources */,
+				FBD1357D29729BD900793CCE /* TypeAlias.swift in Sources */,
+				FBD7EBA029705373006D82D9 /* MainInteractor.swift in Sources */,
+				FBD135702972887100793CCE /* PaymentModels.swift in Sources */,
+				FBD7EB9E29705373006D82D9 /* MainModels.swift in Sources */,
+				FBD1356D2972887100793CCE /* PaymentPresenter.swift in Sources */,
+				FBD7EBB4297053E6006D82D9 /* MainTableViewCell.swift in Sources */,
+				FBD1356E2972887100793CCE /* PaymentWorker.swift in Sources */,
+				FBD7EBAB297053AF006D82D9 /* DetailRouter.swift in Sources */,
+				FBD7EBAC297053AF006D82D9 /* DetailModels.swift in Sources */,
+				FBF91F0B297AC91F009A30F1 /* BillPopUpView.swift in Sources */,
+				FBD135892972A6F400793CCE /* Response.swift in Sources */,
+				FBD1358029729BFF00793CCE /* APIRouter.swift in Sources */,
+				FBD7EB9D29705373006D82D9 /* MainRouter.swift in Sources */,
+				FBD135712972887100793CCE /* PaymentViewController.swift in Sources */,
+				FBD7EBB829705401006D82D9 /* MainColletionViewCell.swift in Sources */,
+				FBD7EB9F29705373006D82D9 /* MainViewController.swift in Sources */,
+				FBD7EBAD297053AF006D82D9 /* DetailViewController.swift in Sources */,
+				FB5F621629716DA60037596D /* LoadingProgress.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD7EB73296FF83B006D82D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD7EB7C296FF83B006D82D9 /* EAT_FORKTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD7EB7D296FF83B006D82D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD7EB88296FF83B006D82D9 /* EAT_FORKUITestsLaunchTests.swift in Sources */,
+				FBD7EB86296FF83B006D82D9 /* EAT_FORKUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBD7EB79296FF83B006D82D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBD7EB60296FF839006D82D9 /* EAT&FORK */;
+			targetProxy = FBD7EB78296FF83B006D82D9 /* PBXContainerItemProxy */;
+		};
+		FBD7EB83296FF83B006D82D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBD7EB60296FF839006D82D9 /* EAT&FORK */;
+			targetProxy = FBD7EB82296FF83B006D82D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FBD7EB6A296FF839006D82D9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBD7EB6B296FF839006D82D9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBD7EB6F296FF83B006D82D9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBD7EB70296FF83B006D82D9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBD7EB89296FF83B006D82D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FBD7EB8A296FF83B006D82D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBD7EB8C296FF83B006D82D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75CAC7F9F59FDBB5C82716C4 /* Pods-EAT&FORK.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EAT&FORK/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.EAT-FORK";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBD7EB8D296FF83B006D82D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A288518110B2F3B821240AFB /* Pods-EAT&FORK.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EAT&FORK/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.EAT-FORK";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FBD7EB8F296FF83B006D82D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFF51D9406D65D4CEA77F67C /* Pods-EAT&FORKTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.EAT-FORKTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EAT&FORK.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EAT&FORK";
+			};
+			name = Debug;
+		};
+		FBD7EB90296FF83B006D82D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E125332A35E7A4D85A4FBBE /* Pods-EAT&FORKTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.EAT-FORKTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EAT&FORK.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EAT&FORK";
+			};
+			name = Release;
+		};
+		FBD7EB92296FF83B006D82D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 889F950F25A2AE1D71ECFD82 /* Pods-EAT&FORK-EAT&FORKUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.EAT-FORKUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "EAT&FORK";
+			};
+			name = Debug;
+		};
+		FBD7EB93296FF83B006D82D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B80B9160B01292A73940316C /* Pods-EAT&FORK-EAT&FORKUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.EAT-FORKUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "EAT&FORK";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBD7EB5C296FF839006D82D9 /* Build configuration list for PBXProject "EAT&FORK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBD7EB89296FF83B006D82D9 /* Debug */,
+				FBD7EB8A296FF83B006D82D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBD7EB8B296FF83B006D82D9 /* Build configuration list for PBXNativeTarget "EAT&FORK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBD7EB8C296FF83B006D82D9 /* Debug */,
+				FBD7EB8D296FF83B006D82D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBD7EB8E296FF83B006D82D9 /* Build configuration list for PBXNativeTarget "EAT&FORKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBD7EB8F296FF83B006D82D9 /* Debug */,
+				FBD7EB90296FF83B006D82D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBD7EB91296FF83B006D82D9 /* Build configuration list for PBXNativeTarget "EAT&FORKUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBD7EB92296FF83B006D82D9 /* Debug */,
+				FBD7EB93296FF83B006D82D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBD7EB59296FF839006D82D9 /* Project object */;
+}

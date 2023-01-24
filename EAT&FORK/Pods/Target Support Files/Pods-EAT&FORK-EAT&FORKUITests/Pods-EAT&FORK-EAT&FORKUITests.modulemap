@@ -1,0 +1,6 @@
+framework module Pods_EAT_FORK_EAT_FORKUITests {
+  umbrella header "Pods-EAT&FORK-EAT&FORKUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

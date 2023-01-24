@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-EAT&FORK/Pods-EAT&FORK-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework

@@ -1,0 +1,6 @@
+framework module Pods_EAT_FORK {
+  umbrella header "Pods-EAT&FORK-umbrella.h"
+
+  export *
+  module * { export * }
+}
