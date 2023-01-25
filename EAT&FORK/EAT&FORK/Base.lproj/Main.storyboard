@@ -250,6 +250,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="minus 2.1"/>
+                                                <connections>
+                                                    <action selector="minusButtonTapped:" destination="ZDK-QY-avu" eventType="touchUpInside" id="hPM-50-URV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf3-X5-j2a">
                                                 <rect key="frame" x="67" y="0.0" width="43" height="30"/>

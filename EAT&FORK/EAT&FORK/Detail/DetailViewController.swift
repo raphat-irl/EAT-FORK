@@ -131,6 +131,16 @@ class DetailViewController: UIViewController, DetailDisplayLogic
         print(wantedQuantity)
     }
     
+    @IBAction func minusButtonTapped(_ sender:UIButton){
+        if wantedQuantity == 1{
+            minusButton.isEnabled = false
+        } else {
+            minusButton.isEnabled = true
+            wantedQuantity -= 1
+            menuCountLabel.text = String(wantedQuantity)
+        }
+    }
+    
     @IBAction func addToBasketButtonTapped(_ sender:UIButton){
         
         guard let menu = menuList else { return }

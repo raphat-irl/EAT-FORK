@@ -139,6 +139,8 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
     
     @objc func backToMainPopUpButtonTapped(){
         self.billPopUp.removeFromSuperview()
+        addMenu = []
+        delegate?.backToMain(data: addMenu)
         router?.routeToMain()
     }
     
