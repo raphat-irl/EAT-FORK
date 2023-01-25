@@ -96,13 +96,13 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ZI-Wx-7wv" customClass="View" customModule="EAT_FORK" customModuleProvider="target">
-                                <rect key="frame" x="121" y="5" width="24" height="22"/>
+                                <rect key="frame" x="121" y="5" width="24" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onB-wP-KwG">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="22"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="kcS-qz-PMG"/>
                                             <constraint firstAttribute="width" constant="24" id="q16-4P-MIE"/>
-                                            <constraint firstAttribute="height" constant="22" id="zS2-4f-u8A"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="18"/>
                                         <color key="textColor" red="0.86274509799999999" green="0.70196078429999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,16 +111,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="5dc-2N-Xj8"/>
-                                    <constraint firstAttribute="bottom" secondItem="onB-wP-KwG" secondAttribute="bottom" id="E4G-if-NQ7"/>
+                                    <constraint firstAttribute="height" constant="24" id="34Q-6j-eGF"/>
+                                    <constraint firstAttribute="bottom" secondItem="onB-wP-KwG" secondAttribute="bottom" constant="2" id="E4G-if-NQ7"/>
+                                    <constraint firstAttribute="width" constant="24" id="Y6X-aO-mI1"/>
                                     <constraint firstItem="onB-wP-KwG" firstAttribute="top" secondItem="1ZI-Wx-7wv" secondAttribute="top" id="ZMr-H3-co8"/>
                                     <constraint firstItem="onB-wP-KwG" firstAttribute="leading" secondItem="1ZI-Wx-7wv" secondAttribute="leading" id="dmn-1e-1M4"/>
-                                    <constraint firstAttribute="width" constant="24" id="lOp-A1-HmX"/>
                                     <constraint firstAttribute="trailing" secondItem="onB-wP-KwG" secondAttribute="trailing" id="qFf-rW-GZi"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>

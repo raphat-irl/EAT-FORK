@@ -11,7 +11,6 @@ import UIKit
 protocol MainTableViewCellDelegate {
     func addButtonTapped(for cell:MainTableViewCell)
 }
-
 class MainTableViewCell: UITableViewCell {
     
     @IBOutlet weak var menuImage:UIImageView!
@@ -43,7 +42,6 @@ class MainTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-
         self.menuAddLabel.isHidden = false
         self.addView.isHidden = true
         

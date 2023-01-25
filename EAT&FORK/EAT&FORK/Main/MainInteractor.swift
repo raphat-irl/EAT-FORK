@@ -21,7 +21,7 @@ protocol MainBusinessLogic
 
 protocol MainDataStore
 {
-  //var name: String { get set }
+    
 }
 
 class MainInteractor: MainBusinessLogic, MainDataStore
@@ -58,6 +58,7 @@ class MainInteractor: MainBusinessLogic, MainDataStore
             presenter?.presentSearchFilterList(response: searchFilterList ?? [])
         }
     }
+    
 }
 
 

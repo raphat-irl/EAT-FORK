@@ -91,7 +91,7 @@ class MainViewController: UIViewController, MainDisplayLogic, UISearchBarDelegat
         menuViewColletion.register(UINib(nibName: "MainColletionViewCell", bundle: nil), forCellWithReuseIdentifier: MainColletionViewCell.identifier)
         
         var screenWidth = UIScreen.main.bounds.width
-        screenWidth -= 60
+        screenWidth -= 80
 
         itemWidth = screenWidth / CGFloat(2)
         itemHight = 150
@@ -251,6 +251,7 @@ extension MainViewController: UITableViewDataSource,UITableViewDelegate {
                 cell.menuSumPrice += items.menu.price * items.quantity
                 cell.menuSumQuantity += items.quantity
                 summaryPriceLabel.text = "฿\(String(format: "%d", cell.menuSumPrice)).00 "
+                
                 print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
                 print(cell.menuSumPrice)
                 print(cell.menuSumQuantity)
@@ -321,7 +322,7 @@ extension MainViewController:UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        return UIEdgeInsets(top: 15, left: 25, bottom: 15, right: 25)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

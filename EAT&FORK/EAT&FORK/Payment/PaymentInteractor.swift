@@ -29,7 +29,6 @@ class PaymentInteractor: PaymentBusinessLogic, PaymentDataStore
   //var name: String = ""
   
   // MARK: Do something
-  
   func doSomething(request: Payment.Something.Request)
   {
     worker = PaymentWorker()
