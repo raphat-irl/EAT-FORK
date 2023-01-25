@@ -118,7 +118,7 @@ class MainViewController: UIViewController, MainDisplayLogic, UISearchBarDelegat
         super.viewWillAppear(animated)
         menuView.reloadData()
         menuViewColletion.reloadData()
-        changeToTableViewCellButton.backgroundColor = UIColor(hex: "DCB042")
+        changeToTableViewCellButton.backgroundColor = HexColor.color(hex: "DCB042")
         
     }
   
@@ -138,9 +138,9 @@ class MainViewController: UIViewController, MainDisplayLogic, UISearchBarDelegat
     
     @objc func buttonPressed(sender: UIButton) {
         if let previous = previousButton {
-            previous.backgroundColor = UIColor(hex: "C0C0C0")
+            previous.backgroundColor = HexColor.color(hex: "C0C0C0")
         }
-        sender.backgroundColor = UIColor(hex: "DCB042")
+        sender.backgroundColor = HexColor.color(hex: "DCB042")
         previousButton = sender
     }
     
@@ -356,27 +356,6 @@ extension MainViewController:DetailDelegate{
         backButtonTapped(data: menu)
     }
 
-}
-
-extension UIColor {
-    convenience init(hex: String) {
-        let scanner = Scanner(string: hex)
-        scanner.scanLocation = 0
-        
-        var rgbColorValue: UInt64 = 0
-        
-        scanner.scanHexInt64(&rgbColorValue)
-        
-        let r = (rgbColorValue & 0xff0000) >> 16
-        let g = (rgbColorValue & 0xff00) >> 8
-        let b = rgbColorValue & 0xff
-        
-        self.init(
-            red: CGFloat(r) / 0xff,
-            green: CGFloat(g) / 0xff,
-            blue: CGFloat(b) / 0xff, alpha: 1
-        )
-    }
 }
 extension Main.getMenu.ViewModel: Equatable {
     static func == (lhs: Main.getMenu.ViewModel, rhs: Main.getMenu.ViewModel) -> Bool {

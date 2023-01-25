@@ -15,6 +15,7 @@
 		FB5F620F2971240B0037596D /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB5F62062971240B0037596D /* Inter-Bold.ttf */; };
 		FB5F621629716DA60037596D /* LoadingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F621529716DA60037596D /* LoadingProgress.swift */; };
 		FB5F621829716DB90037596D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F621729716DB90037596D /* View.swift */; };
+		FB612D382980E57D008D20DB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612D372980E57D008D20DB /* Color.swift */; };
 		FBD1356D2972887100793CCE /* PaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD135672972887100793CCE /* PaymentPresenter.swift */; };
 		FBD1356E2972887100793CCE /* PaymentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD135682972887100793CCE /* PaymentWorker.swift */; };
 		FBD1356F2972887100793CCE /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD135692972887100793CCE /* PaymentRouter.swift */; };
@@ -89,6 +90,7 @@
 		FB5F62062971240B0037596D /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		FB5F621529716DA60037596D /* LoadingProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProgress.swift; sourceTree = "<group>"; };
 		FB5F621729716DB90037596D /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		FB612D372980E57D008D20DB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FBD135672972887100793CCE /* PaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPresenter.swift; sourceTree = "<group>"; };
 		FBD135682972887100793CCE /* PaymentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWorker.swift; sourceTree = "<group>"; };
 		FBD135692972887100793CCE /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				FB5F621529716DA60037596D /* LoadingProgress.swift */,
 				FB5F621729716DB90037596D /* View.swift */,
+				FB612D372980E57D008D20DB /* Color.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				FBD7EB9E29705373006D82D9 /* MainModels.swift in Sources */,
 				FBD1356D2972887100793CCE /* PaymentPresenter.swift in Sources */,
 				FBD7EBB4297053E6006D82D9 /* MainTableViewCell.swift in Sources */,
+				FB612D382980E57D008D20DB /* Color.swift in Sources */,
 				FBD1356E2972887100793CCE /* PaymentWorker.swift in Sources */,
 				FBD7EBAB297053AF006D82D9 /* DetailRouter.swift in Sources */,
 				FBD7EBAC297053AF006D82D9 /* DetailModels.swift in Sources */,
