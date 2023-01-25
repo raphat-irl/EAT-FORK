@@ -15,13 +15,11 @@ import UIKit
 protocol DetailBusinessLogic
 {
   func doSomething(request: Detail.Something.Request)
-
 }
 
 protocol DetailDataStore
 {
-  //var name: String { get set }
-//    var menu: MenuResponse? {get set}
+
 }
 
 class DetailInteractor: DetailBusinessLogic, DetailDataStore
@@ -30,12 +28,9 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore
     
   var presenter: DetailPresentationLogic?
   var worker: DetailWorker?
-  //var name: String = ""
   
   // MARK: Do something
     
-   
-  
   func doSomething(request: Detail.Something.Request)
   {
     worker = DetailWorker()

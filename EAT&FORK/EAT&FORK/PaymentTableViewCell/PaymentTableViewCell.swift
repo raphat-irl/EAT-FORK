@@ -16,7 +16,6 @@ class PaymentTableViewCell:UITableViewCell{
     @IBOutlet weak var menuPriceLabel:UILabel!
     @IBOutlet weak var quantityLabel:UILabel!
     
-    
     static let identifier = "PaymentTableViewCell"
     
     override class func awakeFromNib() {
@@ -31,5 +30,4 @@ class PaymentTableViewCell:UITableViewCell{
         menuPriceLabel.text = "฿ \(menu.menu.price).00"
 
     }
-    
 }

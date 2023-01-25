@@ -21,10 +21,7 @@ protocol DetailDelegate {
     func addMenuFromDetail(menu: [Main.MainModels.MenuQuantity])
 }
 
-
-
-class DetailViewController: UIViewController, DetailDisplayLogic
-{
+class DetailViewController: UIViewController, DetailDisplayLogic {
 
   @IBOutlet weak var quantityControlView:UIView!
   @IBOutlet weak var menuImage:UIImageView!
@@ -120,7 +117,6 @@ class DetailViewController: UIViewController, DetailDisplayLogic
         menuNameLabel.text = menuList?.name
         menuDescLabel.text = menuList?.desc
         menuPriceLabel.text = String(menuList?.price ?? 0)
-        
     }
   
   // MARK: Do something
@@ -161,8 +157,6 @@ class DetailViewController: UIViewController, DetailDisplayLogic
         router?.dismissToMain()
     }
            
-
-    
     @IBAction func onCloseButtonTapped(_ sender:UIButton){
         router?.dismissToMain()
     }
@@ -179,7 +173,7 @@ class DetailViewController: UIViewController, DetailDisplayLogic
   
   func displaySomething(viewModel: Detail.Something.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+    
   }
 }
 

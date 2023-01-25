@@ -166,7 +166,6 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
   
   func displaySomething(viewModel: Payment.Something.ViewModel)
   {
-    //nameTextField.text = viewModel.name
   }
 }
 
@@ -190,7 +189,6 @@ extension PaymentViewController:UITableViewDataSource,UITableViewDelegate{
             -> UISwipeActionsConfiguration? {
                 let deleteAction = UIContextualAction(style: .destructive, title: "ลบเมนู") { [self] (_, _, completionHandler) in
                 
-                // delete the item here
                 tableView.beginUpdates()
                 addMenu.remove(at:indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
@@ -206,7 +204,4 @@ extension PaymentViewController:UITableViewDataSource,UITableViewDelegate{
             let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
             return configuration
     }
-
-
-
 }

@@ -14,7 +14,6 @@ import UIKit
 
 @objc protocol PaymentRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
     func routeToMain()
 }
 

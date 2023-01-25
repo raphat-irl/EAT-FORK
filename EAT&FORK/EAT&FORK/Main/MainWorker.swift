@@ -28,5 +28,4 @@ class MainWorker:MainWorkerprotocol
             }
         }
     }
-    
 }

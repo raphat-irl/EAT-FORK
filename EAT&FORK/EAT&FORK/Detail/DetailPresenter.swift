@@ -28,6 +28,4 @@ class DetailPresenter: DetailPresentationLogic
     let viewModel = Detail.Something.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }
-    
-  
 }

@@ -19,14 +19,13 @@ protocol PaymentBusinessLogic
 
 protocol PaymentDataStore
 {
-  //var name: String { get set }
+  
 }
 
 class PaymentInteractor: PaymentBusinessLogic, PaymentDataStore
 {
   var presenter: PaymentPresentationLogic?
   var worker: PaymentWorker?
-  //var name: String = ""
   
   // MARK: Do something
   func doSomething(request: Payment.Something.Request)

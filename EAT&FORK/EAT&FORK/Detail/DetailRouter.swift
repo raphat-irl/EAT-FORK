@@ -13,16 +13,13 @@
 import UIKit
 protocol DetailRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
   func openWebButtonDetail(menu: Main.getMenu.ViewModel?)
   func dismissToMain()
-    
 }
 
 protocol DetailDataPassing
 {
   var dataStore: DetailDataStore? { get }
-   
 }
 
 class DetailRouter: NSObject, DetailRoutingLogic, DetailDataPassing
@@ -30,7 +27,6 @@ class DetailRouter: NSObject, DetailRoutingLogic, DetailDataPassing
   weak var viewController: DetailViewController?
   var dataStore: DetailDataStore?
 
-  
   // MARK: Routing
     
     func dismissToMain(){
@@ -45,8 +41,6 @@ class DetailRouter: NSObject, DetailRoutingLogic, DetailDataPassing
         }
     }
     
-   
-  
   //func routeToSomewhere(segue: UIStoryboardSegue?)
   //{
   //  if let segue = segue {

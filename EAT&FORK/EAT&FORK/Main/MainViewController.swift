@@ -15,38 +15,36 @@ import UIKit
 protocol MainDisplayLogic: class
 {
   func displayMenuList(viewModel: [Main.getMenu.ViewModel])
-    
 }
 
 class MainViewController: UIViewController, MainDisplayLogic, UISearchBarDelegate, UISearchControllerDelegate,UISearchResultsUpdating, MainTableViewCellDelegate, MainColletionDelegate
 {
 
-    @IBOutlet weak var summaryPriceLabel:UILabel!
+  @IBOutlet weak var summaryPriceLabel:UILabel!
     
-    @IBOutlet weak var summaryButton:UIButton!
+  @IBOutlet weak var summaryButton:UIButton!
 
-    @IBOutlet weak var summaryView:UIView!
+  @IBOutlet weak var summaryView:UIView!
     
-    @IBOutlet weak var changeToTableViewCellButton:UIButton!
-    @IBOutlet weak var changeToColletionViewCellButton:UIButton!
+  @IBOutlet weak var changeToTableViewCellButton:UIButton!
+  @IBOutlet weak var changeToColletionViewCellButton:UIButton!
     
-    private var itemWidth: CGFloat = 0
-    private var itemHight: CGFloat = 0
+  private var itemWidth: CGFloat = 0
+  private var itemHight: CGFloat = 0
     
-    var searchFilterList: [Main.getMenu.ViewModel] = []
-    var searchText: String = ""
+  var searchFilterList: [Main.getMenu.ViewModel] = []
+  var searchText: String = ""
     
+  @IBOutlet weak var menuViewColletion: UICollectionView!
+  @IBOutlet weak var menuView: UITableView!
     
-    @IBOutlet weak var menuViewColletion: UICollectionView!
-    @IBOutlet weak var menuView: UITableView!
+  private let searchBar = UISearchBar()
     
-    private let searchBar = UISearchBar()
+  var previousButton: UIButton?
     
-    var previousButton: UIButton?
+  var menuList: [Main.getMenu.ViewModel] = []
     
-    var menuList: [Main.getMenu.ViewModel] = []
-    
-    var addMenu: [Main.MainModels.MenuQuantity] = []
+  var addMenu: [Main.MainModels.MenuQuantity] = []
     
   var interactor: MainBusinessLogic?
   var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
@@ -165,7 +163,6 @@ class MainViewController: UIViewController, MainDisplayLogic, UISearchBarDelegat
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
-            
             return
         }
         filterContentForSearchText(searchText)
@@ -318,7 +315,7 @@ extension MainViewController:UICollectionViewDataSource
                 print(cell.menuSumQuantity)
             }
         }
-        
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
