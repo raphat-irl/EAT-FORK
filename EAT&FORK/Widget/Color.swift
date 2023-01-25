@@ -8,9 +8,6 @@
 import Foundation
 import UIKit
 
-//import Foundation
-//import UIKit
-//
 class HexColor {
     class func color(hex: String) -> UIColor {
         let scanner = Scanner(string: hex)

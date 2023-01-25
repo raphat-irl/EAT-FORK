@@ -14,7 +14,8 @@ import UIKit
 
 protocol PaymentDisplayLogic: class
 {
-  func displaySomething(viewModel: Payment.Something.ViewModel)
+    func displayCalculateMenu(viewModel: Payment.calculateMenu.ViewModel)
+    func displayCalculateMenuFail(viewModel: Payment.calculateMenu.ViewModelFail)
 }
 
 protocol PaymentDelegate{
@@ -96,39 +97,36 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
   override func viewDidLoad(){
     super.viewDidLoad()
       
-    doSomething()
-      
     menuView.register(UINib(nibName: "PaymentTableViewCell", bundle: nil),
                         forCellReuseIdentifier: PaymentTableViewCell.identifier)
     
-    calculateMenuPrice()
+    calculateMenu()
 
     menuView.reloadData()
      
   }
   
   // MARK: Do something
-    func calculateMenuPrice(){
-        if addMenu.count == 0 {
-            router?.routeToMain()
-            delegate?.backToMain(data: addMenu)
-        } else {
-            for items in addMenu {
-                menuSumPrice += Double(items.menu.price * items.quantity)
-                menuSumPriceLabel.text = String(format: "฿ %0.2f", menuSumPrice)
-                serviceCost = Double(Int(menuSumPrice * 10 / 100))
-                taxCost = Double(Int(menuSumPrice * 7 / 100))
-                totalPrice = menuSumPrice + serviceCost + taxCost
-                servicePriceLabel.text = String(format: "฿ %0.2f", serviceCost)
-                taxPriceLabel.text = String(format: "฿ %0.2f", taxCost)
-                totalPriceLabel.text = String(format: "฿ %0.2f", totalPrice)
-                paidTotalPriceLabel.text = String(format: "฿ %0.2f", totalPrice)
-                
-                print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
-            }
-        }
-       
-    }
+//    func calculateMenuPrice(){
+//        if addMenu.count == 0 {
+//            router?.routeToMain()
+//            delegate?.backToMain(data: addMenu)
+//        } else {
+//            for items in addMenu {
+//                menuSumPrice += Double(items.menu.price * items.quantity)
+//                serviceCost = Double(Int(menuSumPrice * 10 / 100))
+//                taxCost = Double(Int(menuSumPrice * 7 / 100))
+//                totalPrice = menuSumPrice + serviceCost + taxCost
+//                menuSumPriceLabel.text = String(format: "฿ %0.2f", menuSumPrice)
+//                servicePriceLabel.text = String(format: "฿ %0.2f", serviceCost)
+//                taxPriceLabel.text = String(format: "฿ %0.2f", taxCost)
+//                totalPriceLabel.text = String(format: "฿ %0.2f", totalPrice)
+//                paidTotalPriceLabel.text = String(format: "฿ %0.2f", totalPrice)
+//
+//                print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
+//            }
+//        }
+//    }
     @IBAction func paidButtonTapped(_ sender: Any){
         
         setUpDimmingVIew()
@@ -158,15 +156,28 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
         PaymentView.addSubview(dimmingView)
     }
   
-  func doSomething()
+  func calculateMenu()
   {
-    let request = Payment.Something.Request()
-    interactor?.doSomething(request: request)
+    let request = Payment.calculateMenu.Request(addMenu: addMenu, menuSumPrice: menuSumPrice)
+    interactor?.calculateMenu(request: request)
   }
   
-  func displaySomething(viewModel: Payment.Something.ViewModel)
+  func displayCalculateMenu(viewModel: Payment.calculateMenu.ViewModel)
   {
+      menuSumPriceLabel.text = viewModel.menuSumPriceLabelText
+      servicePriceLabel.text = viewModel.servicePriceLabelText
+      taxPriceLabel.text = viewModel.taxPriceLabelText
+      totalPriceLabel.text = viewModel.totalPriceLabelText
+      paidTotalPriceLabel.text = viewModel.paidTotalPriceLabelText
   }
+    
+    func displayCalculateMenuFail(viewModel: Payment.calculateMenu.ViewModelFail)
+    {
+        router?.routeToMain()
+        delegate?.backToMain(data: viewModel.addMenu)
+    }
+    
+  
 }
 
 extension PaymentViewController:UITableViewDataSource,UITableViewDelegate{
@@ -196,7 +207,7 @@ extension PaymentViewController:UITableViewDataSource,UITableViewDelegate{
                 
                 menuSumPrice = 0
                 menuView.reloadData()
-                calculateMenuPrice()
+                calculateMenu()
                 completionHandler(true)
                     
             }

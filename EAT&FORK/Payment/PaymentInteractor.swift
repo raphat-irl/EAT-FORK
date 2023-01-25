@@ -14,7 +14,7 @@ import UIKit
 
 protocol PaymentBusinessLogic
 {
-  func doSomething(request: Payment.Something.Request)
+    func calculateMenu(request: Payment.calculateMenu.Request)
 }
 
 protocol PaymentDataStore
@@ -26,14 +26,30 @@ class PaymentInteractor: PaymentBusinessLogic, PaymentDataStore
 {
   var presenter: PaymentPresentationLogic?
   var worker: PaymentWorker?
-  
-  // MARK: Do something
-  func doSomething(request: Payment.Something.Request)
-  {
-    worker = PaymentWorker()
-    worker?.doSomeWork()
     
-    let response = Payment.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    func calculateMenu(request: Payment.calculateMenu.Request){
+        let addMenuIsNotEmpty = request.addMenu.count > 0
+        var menuSumPrice: Double = 0
+        var serviceCost: Double = 0
+        var taxCost: Double = 0
+        var totalPrice: Double = 0
+        if addMenuIsNotEmpty {
+            for item in request.addMenu {
+                menuSumPrice += Double(item.menu.price * item.quantity)
+                serviceCost = Double(Int(menuSumPrice * 10 / 100))
+                taxCost = Double(Int(menuSumPrice * 7 / 100))
+                totalPrice = menuSumPrice + serviceCost + taxCost
+            }
+            let response = Payment.calculateMenu.Response(menuSumPrice: menuSumPrice,
+                                                          serviceCost: serviceCost,
+                                                          taxCost: taxCost,
+                                                          totalPrice: totalPrice)
+            presenter?.presentCalculateMenu(response: response)
+        } else {
+            let response = Payment.calculateMenu.ResponseFail(addMenu: request.addMenu)
+            presenter?.presentCalculateMenuFail(response: response)
+        }
+    }
+    
+  
 }

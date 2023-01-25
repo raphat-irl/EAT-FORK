@@ -91,7 +91,6 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
   }
   
   // MARK: View lifecycle
-  
   override func viewDidLoad()
   {
     super.viewDidLoad()
@@ -111,7 +110,6 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
     
     func setupui(){
         //TEST
-        
         totalPriceLabel.text = String(menuList?.price ?? 0)
         menuImage.kf.setImage(with: URL(string: menuList?.image_url ?? ""))
         menuNameLabel.text = menuList?.name
