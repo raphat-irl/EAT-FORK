@@ -16,16 +16,22 @@ enum Detail
 {
   // MARK: Use cases
   
-  enum Something
+  enum calculateBasketUI
   {
     struct Request
     {
+        var addMenu: [Main.MainModels.MenuQuantity]
+        var menuSumPrice: Int
     }
     struct Response
     {
+        var menuSumPrice: Int
+        var menuSumQuantity: Int
     }
     struct ViewModel
     {
+        var basketPriceLabelText: String
+        var basketmenuCountLabelText: String
     }
   }
 }

@@ -12,9 +12,9 @@
 
 import UIKit
 
-protocol DetailDisplayLogic: class
+protocol DetailDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: Detail.Something.ViewModel)
+    func displayBasketUI(viewModel: Detail.calculateBasketUI.ViewModel)
 }
 
 protocol DetailDelegate {
@@ -94,20 +94,10 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
     setupBasketUI()
     setupui()
   }
-    
-    func setupBasketUI(){
-        for items in addMenu {
-            menuSumPrice += items.menu.price * items.quantity
-            basketPriceLabel.text = "฿\(String(format: "%d", menuSumPrice))"
-            menuSumQuantity += items.quantity
-            basketmenuCountLabel.text = String(menuSumQuantity)
-        }
-    }
-    
+        
     func setupui(){
         //TEST
         totalPriceLabel.text = String(menuList?.price ?? 0)
@@ -122,7 +112,6 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
     @IBAction func plusButtonTapped(_ sender:UIButton){
         wantedQuantity += 1
         menuCountLabel.text = String(wantedQuantity)
-        print(wantedQuantity)
     }
     
     @IBAction func minusButtonTapped(_ sender:UIButton){
@@ -163,15 +152,16 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
         router?.openWebButtonDetail(menu: menuList)
     }
   
-  func doSomething()
+  func setupBasketUI()
   {
-    let request = Detail.Something.Request()
-    interactor?.doSomething(request: request)
+      let request = Detail.calculateBasketUI.Request(addMenu: addMenu, menuSumPrice: menuSumPrice)
+      interactor?.setupBasketUI(request: request)
   }
-  
-  func displaySomething(viewModel: Detail.Something.ViewModel)
-  {
     
+    func displayBasketUI(viewModel: Detail.calculateBasketUI.ViewModel)
+  {
+      basketPriceLabel.text = viewModel.basketPriceLabelText
+      basketmenuCountLabel.text = viewModel.basketmenuCountLabelText
   }
 }
 

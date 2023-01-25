@@ -14,7 +14,7 @@ import UIKit
 
 protocol DetailBusinessLogic
 {
-  func doSomething(request: Detail.Something.Request)
+    func setupBasketUI(request: Detail.calculateBasketUI.Request)
 }
 
 protocol DetailDataStore
@@ -31,12 +31,20 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore
   
   // MARK: Do something
     
-  func doSomething(request: Detail.Something.Request)
-  {
-    worker = DetailWorker()
-    worker?.doSomeWork()
+    func setupBasketUI(request: Detail.calculateBasketUI.Request){
+        var menuSumPrice: Int = 0
+        var menuSumQuantity: Int = 0
+        
+        for items in request.addMenu {
+
+            menuSumPrice += items.menu.price * items.quantity
+            menuSumQuantity += items.quantity
+        
+        }
+        
+        let response = Detail.calculateBasketUI.Response(menuSumPrice:  menuSumPrice,
+                                                         menuSumQuantity: menuSumQuantity)
+        presenter?.presentBasketUI(response: response)
+    }
     
-    let response = Detail.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
 }

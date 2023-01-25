@@ -105,28 +105,6 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
     menuView.reloadData()
      
   }
-  
-  // MARK: Do something
-//    func calculateMenuPrice(){
-//        if addMenu.count == 0 {
-//            router?.routeToMain()
-//            delegate?.backToMain(data: addMenu)
-//        } else {
-//            for items in addMenu {
-//                menuSumPrice += Double(items.menu.price * items.quantity)
-//                serviceCost = Double(Int(menuSumPrice * 10 / 100))
-//                taxCost = Double(Int(menuSumPrice * 7 / 100))
-//                totalPrice = menuSumPrice + serviceCost + taxCost
-//                menuSumPriceLabel.text = String(format: "฿ %0.2f", menuSumPrice)
-//                servicePriceLabel.text = String(format: "฿ %0.2f", serviceCost)
-//                taxPriceLabel.text = String(format: "฿ %0.2f", taxCost)
-//                totalPriceLabel.text = String(format: "฿ %0.2f", totalPrice)
-//                paidTotalPriceLabel.text = String(format: "฿ %0.2f", totalPrice)
-//
-//                print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
-//            }
-//        }
-//    }
     @IBAction func paidButtonTapped(_ sender: Any){
         
         setUpDimmingVIew()

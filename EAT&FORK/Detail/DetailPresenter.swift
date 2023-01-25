@@ -14,7 +14,7 @@ import UIKit
 
 protocol DetailPresentationLogic
 {
-  func presentSomething(response: Detail.Something.Response)
+  func presentBasketUI(response: Detail.calculateBasketUI.Response)
 }
 
 class DetailPresenter: DetailPresentationLogic
@@ -23,9 +23,11 @@ class DetailPresenter: DetailPresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: Detail.Something.Response)
+    func presentBasketUI(response: Detail.calculateBasketUI.Response)
   {
-    let viewModel = Detail.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+      let viewModel = Detail.calculateBasketUI.ViewModel(basketPriceLabelText: "฿\(String(format: "%d",                                                                             response.menuSumPrice))",
+                                                         basketmenuCountLabelText: String(response.menuSumQuantity))
+      
+      viewController?.displayBasketUI(viewModel: viewModel)
   }
 }
