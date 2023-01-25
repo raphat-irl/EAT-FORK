@@ -137,6 +137,7 @@ class MainViewController: UIViewController, MainDisplayLogic, UISearchBarDelegat
   // MARK: Do something
     
     @objc func buttonPressed(sender: UIButton) {
+        changeToTableViewCellButton.backgroundColor = HexColor.color(hex: "C0C0C0")
         if let previous = previousButton {
             previous.backgroundColor = HexColor.color(hex: "C0C0C0")
         }
@@ -241,6 +242,7 @@ extension MainViewController: UITableViewDataSource,UITableViewDelegate {
                
             } else {
                 addMenu.append(Main.MainModels.MenuQuantity(menu: menu, quantity: 1))
+          
                 cell.quantity = 1
                 cell.menuAddLabel.text = "1"
             }
@@ -332,7 +334,8 @@ extension MainViewController:UICollectionViewDataSource
     }
 }
 extension MainViewController:PaymentDelegate{
-    func backButtonTapped(data: [Main.MainModels.MenuQuantity]) {
+ 
+    func backToMain(data: [Main.MainModels.MenuQuantity]) {
         
         var menuSumPrice: Int = 0
         
@@ -353,7 +356,7 @@ extension MainViewController:PaymentDelegate{
 }
 extension MainViewController:DetailDelegate{
     func addMenuFromDetail(menu: [Main.MainModels.MenuQuantity]) {
-        backButtonTapped(data: menu)
+        backToMain(data: menu)
     }
 
 }

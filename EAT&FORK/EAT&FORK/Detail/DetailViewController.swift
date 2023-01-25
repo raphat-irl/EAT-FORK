@@ -26,24 +26,27 @@ protocol DetailDelegate {
 class DetailViewController: UIViewController, DetailDisplayLogic
 {
 
-    @IBOutlet weak var menuImage:UIImageView!
-    @IBOutlet weak var menuNameLabel:UILabel!
-    @IBOutlet weak var menuDescLabel:UILabel!
-    @IBOutlet weak var menuPriceLabel:UILabel!
-    @IBOutlet weak var totalPriceLabel:UILabel!
-    @IBOutlet weak var plusButton:UIButton!
-    @IBOutlet weak var minusButton:UIButton!
-    @IBOutlet weak var menuCountLabel:UILabel!
-    @IBOutlet weak var basketmenuCountLabel:UILabel!
-    @IBOutlet weak var basketPriceLabel:UILabel!
-    @IBOutlet weak var webDetailButton:UIButton!
-    @IBOutlet weak var closeButton:UIButton!
-    @IBOutlet weak var addToBasketButton:UIButton!
+  @IBOutlet weak var quantityControlView:UIView!
+  @IBOutlet weak var menuImage:UIImageView!
+  @IBOutlet weak var menuNameLabel:UILabel!
+  @IBOutlet weak var menuDescLabel:UILabel!
+  @IBOutlet weak var menuPriceLabel:UILabel!
+  @IBOutlet weak var totalPriceLabel:UILabel!
+  @IBOutlet weak var plusButton:UIButton!
+  @IBOutlet weak var minusButton:UIButton!
+  @IBOutlet weak var menuCountLabel:UILabel!
+  @IBOutlet weak var basketmenuCountLabel:UILabel!
+  @IBOutlet weak var basketPriceLabel:UILabel!
+  @IBOutlet weak var webDetailButton:UIButton!
+  @IBOutlet weak var closeButton:UIButton!
+  @IBOutlet weak var addToBasketButton:UIButton!
     
-    var delegate:DetailDelegate?
-    var menuSumPrice : Int = 0
-    var menuSumQuantity : Int = 0
-    var addMenu: [Main.MainModels.MenuQuantity] = []
+  var wantedQuantity: Int = 1
+  var delegate:DetailDelegate?
+  var menuSumPrice : Int = 0
+  var menuSumQuantity : Int = 0
+  var addMenu: [Main.MainModels.MenuQuantity] = []
+    
   var menuList: Main.getMenu.ViewModel?
   var interactor: DetailBusinessLogic?
   var router: (NSObjectProtocol & DetailRoutingLogic & DetailDataPassing)?
@@ -111,6 +114,7 @@ class DetailViewController: UIViewController, DetailDisplayLogic
     
     func setupui(){
         //TEST
+        
         totalPriceLabel.text = String(menuList?.price ?? 0)
         menuImage.kf.setImage(with: URL(string: menuList?.image_url ?? ""))
         menuNameLabel.text = menuList?.name
@@ -121,13 +125,19 @@ class DetailViewController: UIViewController, DetailDisplayLogic
   
   // MARK: Do something
     
+    @IBAction func plusButtonTapped(_ sender:UIButton){
+        wantedQuantity += 1
+        menuCountLabel.text = String(wantedQuantity)
+        print(wantedQuantity)
+    }
+    
     @IBAction func addToBasketButtonTapped(_ sender:UIButton){
         
         guard let menu = menuList else { return }
         if let existingMenu = addMenu.first(where: {$0.menu.id == menu.id}){
-            existingMenu.quantity += 1
+            existingMenu.quantity += wantedQuantity
         } else {
-            let newMenu = Main.MainModels.MenuQuantity(menu: menu, quantity: 1)
+            let newMenu = Main.MainModels.MenuQuantity(menu: menu, quantity: wantedQuantity)
             addMenu.append(newMenu)
             
         }

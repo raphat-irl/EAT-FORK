@@ -18,7 +18,7 @@ protocol PaymentDisplayLogic: class
 }
 
 protocol PaymentDelegate{
-    func backButtonTapped(data: [Main.MainModels.MenuQuantity])
+    func backToMain(data: [Main.MainModels.MenuQuantity])
 }
 
 class PaymentViewController: UIViewController, PaymentDisplayLogic
@@ -36,6 +36,11 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
     @IBOutlet weak var PaymentView:UIView!
     
     @IBOutlet weak var menuView: UITableView!
+    
+    var menuSumPrice:Double = 0
+    var serviceCost:Double = 0
+    var taxCost:Double = 0
+    var totalPrice:Double = 0
     
     var billPopUp: BillPopUpView!
     
@@ -95,15 +100,35 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
       
     menuView.register(UINib(nibName: "PaymentTableViewCell", bundle: nil),
                         forCellReuseIdentifier: PaymentTableViewCell.identifier)
+    
+    calculateMenuPrice()
 
     menuView.reloadData()
      
   }
   
   // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-    
+    func calculateMenuPrice(){
+        if addMenu.count == 0 {
+            router?.routeToMain()
+            delegate?.backToMain(data: addMenu)
+        } else {
+            for items in addMenu {
+                menuSumPrice += Double(items.menu.price * items.quantity)
+                menuSumPriceLabel.text = String(format: "฿ %0.2f", menuSumPrice)
+                serviceCost = Double(Int(menuSumPrice * 10 / 100))
+                taxCost = Double(Int(menuSumPrice * 7 / 100))
+                totalPrice = menuSumPrice + serviceCost + taxCost
+                servicePriceLabel.text = String(format: "฿ %0.2f", serviceCost)
+                taxPriceLabel.text = String(format: "฿ %0.2f", taxCost)
+                totalPriceLabel.text = String(format: "฿ %0.2f", totalPrice)
+                paidTotalPriceLabel.text = String(format: "฿ %0.2f", totalPrice)
+                
+                print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
+            }
+        }
+       
+    }
     @IBAction func paidButtonTapped(_ sender: Any){
         
         setUpDimmingVIew()
@@ -119,7 +144,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
     
     @IBAction func backButtonTapped(_sender: UIButton!){
         router?.routeToMain()
-        delegate?.backButtonTapped(data: addMenu)
+        delegate?.backToMain(data: addMenu)
        
     }
     
@@ -168,7 +193,12 @@ extension PaymentViewController:UITableViewDataSource,UITableViewDelegate{
                 addMenu.remove(at:indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 tableView.endUpdates()
+                
+                menuSumPrice = 0
+                menuView.reloadData()
+                calculateMenuPrice()
                 completionHandler(true)
+                    
             }
             deleteAction.backgroundColor = .systemRed
             let configuration = UISwipeActionsConfiguration(actions: [deleteAction])

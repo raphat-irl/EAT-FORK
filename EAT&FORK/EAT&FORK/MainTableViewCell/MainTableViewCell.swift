@@ -63,7 +63,7 @@ class MainTableViewCell: UITableViewCell {
         quantity = 0
         menuSumPrice = 0
         menuSumQuantity = 0
-        var indexPath: IndexPath?
+        var _ : IndexPath?
         delegate?.addButtonTapped(for: self)
         
         addView.isHidden = false

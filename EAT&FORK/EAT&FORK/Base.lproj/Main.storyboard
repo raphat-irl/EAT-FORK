@@ -258,6 +258,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="plus"/>
+                                                <connections>
+                                                    <action selector="plusButtonTapped:" destination="ZDK-QY-avu" eventType="touchUpInside" id="5hV-px-fbf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -472,6 +475,7 @@
                         <outlet property="menuPriceLabel" destination="aah-hU-MTk" id="E8i-Ka-OC1"/>
                         <outlet property="minusButton" destination="V8Q-Da-brB" id="Avt-Cc-3Wz"/>
                         <outlet property="plusButton" destination="qf3-X5-j2a" id="bAx-af-FJn"/>
+                        <outlet property="quantityControlView" destination="atB-9f-E7A" id="deK-M9-YL8"/>
                         <outlet property="totalPriceLabel" destination="2bh-Ib-SrB" id="BrI-7V-xNW"/>
                         <outlet property="webDetailButton" destination="Uyc-2C-7US" id="dkg-aU-rMs"/>
                     </connections>
@@ -532,9 +536,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1O-wN-spu">
-                                            <rect key="frame" x="354" y="37" width="47" height="17"/>
+                                            <rect key="frame" x="289" y="37" width="112" height="17"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="47" id="KMb-hL-6Pj"/>
+                                                <constraint firstAttribute="width" constant="112" id="KMb-hL-6Pj"/>
                                                 <constraint firstAttribute="height" constant="17" id="Tef-Vk-DIL"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
@@ -542,20 +546,20 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klk-gw-5n7">
-                                            <rect key="frame" x="354" y="66" width="47" height="17"/>
+                                            <rect key="frame" x="289" y="66" width="112" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="LDM-Pz-VjS"/>
-                                                <constraint firstAttribute="width" constant="47" id="oQZ-65-p0Y"/>
+                                                <constraint firstAttribute="width" constant="112" id="oQZ-65-p0Y"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjU-sp-UVY">
-                                            <rect key="frame" x="354" y="95" width="47" height="17"/>
+                                            <rect key="frame" x="289" y="95" width="112" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="18X-2o-2MB"/>
-                                                <constraint firstAttribute="width" constant="47" id="gD4-wO-mIP"/>
+                                                <constraint firstAttribute="width" constant="112" id="gD4-wO-mIP"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
                                             <nil key="textColor"/>
