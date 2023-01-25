@@ -12,9 +12,10 @@
 
 import UIKit
 
-protocol PaymentDisplayLogic: class
+protocol PaymentDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: Payment.Something.ViewModel)
+    func displayCalculateMenu(viewModel: Payment.calculateMenu.ViewModel)
+    func displayCalculateMenuFail(viewModel: Payment.calculateMenu.ViewModelFail)
 }
 
 protocol PaymentDelegate{
@@ -46,68 +47,66 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
     
     var addMenu: [Main.MainModels.MenuQuantity] = []
     
-  var interactor: PaymentBusinessLogic?
-  var router: (NSObjectProtocol & PaymentRoutingLogic & PaymentDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = PaymentInteractor()
-    let presenter = PaymentPresenter()
-    let router = PaymentRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad(){
-    super.viewDidLoad()
-      
-    doSomething()
-      
-    menuView.register(UINib(nibName: "PaymentTableViewCell", bundle: nil),
-                        forCellReuseIdentifier: PaymentTableViewCell.identifier)
+    var interactor: PaymentBusinessLogic?
+    var router: (NSObjectProtocol & PaymentRoutingLogic & PaymentDataPassing)?
     
-    calculateMenuPrice()
-
-    menuView.reloadData()
-     
-  }
-  
-  // MARK: Do something
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = PaymentInteractor()
+        let presenter = PaymentPresenter()
+        let router = PaymentRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        
+        menuView.register(UINib(nibName: "PaymentTableViewCell", bundle: nil),
+                          forCellReuseIdentifier: PaymentTableViewCell.identifier)
+        
+        calculateMenu()
+        
+        menuView.reloadData()
+        
+    }
+    
+    // MARK: Do something
     func calculateMenuPrice(){
         if addMenu.count == 0 {
             router?.routeToMain()
@@ -115,10 +114,10 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
         } else {
             for items in addMenu {
                 menuSumPrice += Double(items.menu.price * items.quantity)
-                menuSumPriceLabel.text = String(format: "฿ %0.2f", menuSumPrice)
                 serviceCost = Double(Int(menuSumPrice * 10 / 100))
                 taxCost = Double(Int(menuSumPrice * 7 / 100))
                 totalPrice = menuSumPrice + serviceCost + taxCost
+                menuSumPriceLabel.text = String(format: "฿ %0.2f", menuSumPrice)
                 servicePriceLabel.text = String(format: "฿ %0.2f", serviceCost)
                 taxPriceLabel.text = String(format: "฿ %0.2f", taxCost)
                 totalPriceLabel.text = String(format: "฿ %0.2f", totalPrice)
@@ -127,7 +126,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
                 print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
             }
         }
-       
+        
     }
     @IBAction func paidButtonTapped(_ sender: Any){
         
@@ -147,7 +146,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
     @IBAction func backButtonTapped(_sender: UIButton!){
         router?.routeToMain()
         delegate?.backToMain(data: addMenu)
-       
+        
     }
     
     func setUpDimmingVIew() {
@@ -157,51 +156,62 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic
         dimmingView.frame = PaymentView.bounds
         PaymentView.addSubview(dimmingView)
     }
-  
-  func doSomething()
-  {
-    let request = Payment.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: Payment.Something.ViewModel)
-  {
-  }
+    
+    func calculateMenu()
+    {
+        let request = Payment.calculateMenu.Request(addMenu: addMenu,
+                                                    menuSumPrice: menuSumPrice)
+        interactor?.calculateMenu(request: request)
+    }
+    
+    func displayCalculateMenu(viewModel: Payment.calculateMenu.ViewModel)
+    {
+        menuSumPriceLabel.text = viewModel.menuSumPriceLabelText
+        servicePriceLabel.text = viewModel.servicePriceLabelText
+        taxPriceLabel.text = viewModel.taxPriceLabelText
+        totalPriceLabel.text = viewModel.totalPriceLabelText
+        paidTotalPriceLabel.text = viewModel.paidTotalPriceLabelText
+    }
+    
+    func displayCalculateMenuFail(viewModel: Payment.calculateMenu.ViewModelFail) {
+        router?.routeToMain()
+        delegate?.backToMain(data: viewModel.addMenu)
+    }
 }
 
 extension PaymentViewController:UITableViewDataSource,UITableViewDelegate{
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return addMenu.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PaymentTableViewCell.identifier, for: indexPath as IndexPath) as? PaymentTableViewCell else {
             return UITableViewCell()
         }
         let menuAddObj = addMenu[indexPath.row]
         cell.setPaymentCell(menu: menuAddObj)
-
+        
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
-            -> UISwipeActionsConfiguration? {
-                let deleteAction = UIContextualAction(style: .destructive, title: "ลบเมนู") { [self] (_, _, completionHandler) in
-                
-                tableView.beginUpdates()
-                addMenu.remove(at:indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                tableView.endUpdates()
-                
-                menuSumPrice = 0
-                menuView.reloadData()
-                calculateMenuPrice()
-                completionHandler(true)
-                    
-            }
-            deleteAction.backgroundColor = .systemRed
-            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-            return configuration
+    -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "ลบเมนู") { [self] (_, _, completionHandler) in
+            
+            tableView.beginUpdates()
+            addMenu.remove(at:indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+            
+            menuSumPrice = 0
+            menuView.reloadData()
+            calculateMenu()
+            completionHandler(true)
+            
+        }
+        deleteAction.backgroundColor = .systemRed
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
     }
 }

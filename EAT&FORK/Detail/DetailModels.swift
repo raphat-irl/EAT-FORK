@@ -14,18 +14,37 @@ import UIKit
 
 enum Detail
 {
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
+    // MARK: Use cases
+    
+    enum Something
     {
+        struct Request
+        {
+        }
+        struct Response
+        {
+        }
+        struct ViewModel
+        {
+        }
     }
-    struct Response
+    
+    enum adjustQuantity
     {
+        struct Request
+        {
+            var adjustEvent: AdjustEvent
+        }
+        struct Response
+        {
+        }
+        struct ViewModel
+        {
+        }
     }
-    struct ViewModel
-    {
+    
+    enum AdjustEvent {
+        case plus
+        case minus
     }
-  }
 }

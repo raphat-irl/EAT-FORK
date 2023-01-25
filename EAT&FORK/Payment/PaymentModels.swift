@@ -14,18 +14,36 @@ import UIKit
 
 enum Payment
 {
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
+    // MARK: Use cases
+    
+    enum calculateMenu
     {
+        struct Request
+        {
+            var addMenu: [Main.MainModels.MenuQuantity]
+            var menuSumPrice: Double
+        }
+        struct Response
+        {
+            var menuSumPrice: Double
+            var serviceCost: Double
+            var taxCost: Double
+            var totalPrice: Double
+        }
+        struct ResponseFail {
+            var addMenu: [Main.MainModels.MenuQuantity]
+        }
+        struct ViewModel
+        {
+            var menuSumPriceLabelText: String
+            var servicePriceLabelText: String
+            var taxPriceLabelText: String
+            var totalPriceLabelText: String
+            var paidTotalPriceLabelText: String
+        }
+        struct ViewModelFail
+        {
+            var addMenu: [Main.MainModels.MenuQuantity]
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

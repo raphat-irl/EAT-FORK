@@ -14,18 +14,28 @@ import UIKit
 
 protocol PaymentPresentationLogic
 {
-  func presentSomething(response: Payment.Something.Response)
+    func presentCalculateMenu(response: Payment.calculateMenu.Response)
+    func presentCalculateMenuFail(response: Payment.calculateMenu.ResponseFail)
 }
 
 class PaymentPresenter: PaymentPresentationLogic
 {
-  weak var viewController: PaymentDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Payment.Something.Response)
-  {
-    let viewModel = Payment.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: PaymentDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentCalculateMenu(response: Payment.calculateMenu.Response)
+    {
+        let viewModel = Payment.calculateMenu.ViewModel(menuSumPriceLabelText: String(format: "฿ %0.2f", response.menuSumPrice),
+                                                        servicePriceLabelText: String(format: "฿ %0.2f", response.serviceCost),
+                                                        taxPriceLabelText: String(format: "฿ %0.2f", response.taxCost),
+                                                        totalPriceLabelText: String(format: "฿ %0.2f", response.totalPrice),
+                                                        paidTotalPriceLabelText: String(format: "฿ %0.2f", response.totalPrice))
+        viewController?.displayCalculateMenu(viewModel: viewModel)
+    }
+    
+    func presentCalculateMenuFail(response: Payment.calculateMenu.ResponseFail) {
+        let viewModel = Payment.calculateMenu.ViewModelFail(addMenu: response.addMenu)
+        viewController?.displayCalculateMenuFail(viewModel: viewModel)
+    }
 }
