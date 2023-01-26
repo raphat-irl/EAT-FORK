@@ -18,8 +18,6 @@ protocol DetailDisplayLogic: AnyObject
     func displayMenuUI(viewModel: Detail.setUpUI.ViewModel)
     func displayaddToBasKet(viewModel: Detail.addToBasket.ViewModel)
     func displayIncreaseButton(viewModel: Detail.increaseButton.ViewModel)
-    func displayDecreaseButton(viewModel: Detail.decreaseButton.ViewModel)
-    
 }
 
 protocol DetailDelegate {
@@ -106,7 +104,9 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
   // MARK: Do something
     
     @IBAction func addToBasketButtonTapped(_ sender:UIButton){
+        
         addToBasket()
+
     }
     
     @IBAction func plusButtonTapped(_ sender:UIButton){
@@ -114,7 +114,13 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
     }
     
     @IBAction func minusButtonTapped(_ sender:UIButton){
-        decreaseButton()
+        if wantedQuantity == 1{
+            minusButton.isEnabled = false
+        } else {
+            minusButton.isEnabled = true
+            wantedQuantity -= 1
+            menuCountLabel.text = String(wantedQuantity)
+        }
     }
     
     @IBAction func onCloseButtonTapped(_ sender:UIButton){
@@ -170,17 +176,6 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
     }
     
     func displayIncreaseButton(viewModel: Detail.increaseButton.ViewModel) {
-        wantedQuantity = viewModel.wantedQuantity
-        menuCountLabel.text = String(viewModel.wantedQuantity)
-        minusButton.isEnabled = viewModel.minusButtonIsEnabled
-    }
-    
-    func decreaseButton(){
-        let request = Detail.decreaseButton.Request(wantedQuantity: wantedQuantity)
-        interactor?.decreaseButton(request: request)
-    }
-    
-    func displayDecreaseButton(viewModel: Detail.decreaseButton.ViewModel) {
         wantedQuantity = viewModel.wantedQuantity
         menuCountLabel.text = String(viewModel.wantedQuantity)
         minusButton.isEnabled = viewModel.minusButtonIsEnabled
