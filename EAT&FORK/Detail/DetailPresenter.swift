@@ -19,6 +19,7 @@ protocol DetailPresentationLogic
   func presentMenuUI(response: Detail.setUpUI.Response)
   func presentAddtoBasket(response: Detail.addToBasket.Response)
   func presentIncreaseButton(response: Detail.increaseButton.Response)
+  func presentDecreaseButton(response:Detail.decreaseButton.Response)
 }
 
 class DetailPresenter: DetailPresentationLogic
@@ -55,8 +56,15 @@ class DetailPresenter: DetailPresentationLogic
     }
     
     func presentIncreaseButton(response: Detail.increaseButton.Response){
-        let viewModel = Detail.increaseButton.ViewModel(minusButtonIsEnabled: response.minusButtonIsEnabled,                                              wantedQuantity: response.wantedQuantity)
+        let viewModel = Detail.increaseButton.ViewModel(minusButtonIsEnabled:                          response.minusButtonIsEnabled,
+                                                        wantedQuantity: response.wantedQuantity)
         
         viewController?.displayIncreaseButton(viewModel: viewModel)
+    }
+    
+    func presentDecreaseButton(response:Detail.decreaseButton.Response){
+        let viewModel = Detail.decreaseButton.ViewModel(minusButtonIsEnabled: response.minusButtonIsEnabled, wantedQuantity: response.wantedQuantity)
+        
+        viewController?.displayDecreaseButton(viewModel: viewModel)
     }
 }
