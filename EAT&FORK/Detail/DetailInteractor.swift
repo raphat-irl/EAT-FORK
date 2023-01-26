@@ -15,6 +15,7 @@ import UIKit
 protocol DetailBusinessLogic
 {
     func setupBasketUI(request: Detail.calculateBasketUI.Request)
+    func setupUI(request: Detail.setUpUI.Request)
 }
 
 protocol DetailDataStore
@@ -47,4 +48,12 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore
         presenter?.presentBasketUI(response: response)
     }
     
+    func setupUI(request: Detail.setUpUI.Request){
+        
+        let response = Detail.setUpUI.Response(menuList: request.menuList)
+        
+        presenter?.prsentMenuUI(response: response)
+        
+    }
+   
 }

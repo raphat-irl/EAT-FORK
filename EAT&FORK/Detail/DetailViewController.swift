@@ -15,6 +15,7 @@ import UIKit
 protocol DetailDisplayLogic: AnyObject
 {
     func displayBasketUI(viewModel: Detail.calculateBasketUI.ViewModel)
+    func displayMenuUI(viewModel: Detail.setUpUI.ViewModel)
 }
 
 protocol DetailDelegate {
@@ -95,23 +96,15 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
   {
     super.viewDidLoad()
     setupBasketUI()
-    setupui()
+      setupUI()
   }
         
-    func setupui(){
-        //TEST
-        totalPriceLabel.text = String(menuList?.price ?? 0)
-        menuImage.kf.setImage(with: URL(string: menuList?.image_url ?? ""))
-        menuNameLabel.text = menuList?.name
-        menuDescLabel.text = menuList?.desc
-        menuPriceLabel.text = String(menuList?.price ?? 0)
-    }
-  
   // MARK: Do something
     
     @IBAction func plusButtonTapped(_ sender:UIButton){
         wantedQuantity += 1
         menuCountLabel.text = String(wantedQuantity)
+        minusButton.isEnabled = true
     }
     
     @IBAction func minusButtonTapped(_ sender:UIButton){
@@ -134,11 +127,11 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
             addMenu.append(newMenu)
             
         }
-        //test
-        for items in addMenu{
-        print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
-        print(menuSumQuantity)
-        }
+//        //test
+//        for items in addMenu{
+//        print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
+//        print(menuSumQuantity)
+//        }
         
         delegate?.addMenuFromDetail(menu: addMenu)
         router?.dismissToMain()
@@ -163,5 +156,20 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
       basketPriceLabel.text = viewModel.basketPriceLabelText
       basketmenuCountLabel.text = viewModel.basketmenuCountLabelText
   }
+    
+    func setupUI()
+    {
+        let request = Detail.setUpUI.Request(menuList: menuList)
+        interactor?.setupUI(request: request)
+    }
+    
+    func displayMenuUI(viewModel: Detail.setUpUI.ViewModel)
+    {
+        menuImage.kf.setImage(with: URL(string: viewModel.menuImageURL))
+        totalPriceLabel.text = viewModel.totalPriceLabelText
+        menuNameLabel.text = viewModel.menuNameLabelText
+        menuDescLabel.text = viewModel.menuDescLabelText
+        menuPriceLabel.text = viewModel.menuPriceLabelText
+    }
 }
 

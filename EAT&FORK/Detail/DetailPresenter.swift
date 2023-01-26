@@ -11,10 +11,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol DetailPresentationLogic
 {
   func presentBasketUI(response: Detail.calculateBasketUI.Response)
+  func prsentMenuUI(response: Detail.setUpUI.Response)
 }
 
 class DetailPresenter: DetailPresentationLogic
@@ -25,9 +27,21 @@ class DetailPresenter: DetailPresentationLogic
   
     func presentBasketUI(response: Detail.calculateBasketUI.Response)
   {
-      let viewModel = Detail.calculateBasketUI.ViewModel(basketPriceLabelText: "฿\(String(format: "%d",                                                                             response.menuSumPrice))",
-                                                         basketmenuCountLabelText: String(response.menuSumQuantity))
+      let viewModel = Detail.calculateBasketUI.ViewModel(basketPriceLabelText:
+                                                                "฿\(String(response.menuSumPrice))",
+                                                        basketmenuCountLabelText:                   String(response.menuSumQuantity))
       
       viewController?.displayBasketUI(viewModel: viewModel)
   }
+    
+    func prsentMenuUI(response: Detail.setUpUI.Response)
+    {
+        let viewModel = Detail.setUpUI.ViewModel(menuImageURL: String(response.menuList?.image_url ?? ""),
+                                                 totalPriceLabelText: String(response.menuList?.price ?? 0),
+                                                 menuNameLabelText: String(response.menuList?.name ?? ""),
+                                                 menuDescLabelText: String(response.menuList?.desc ?? ""),
+                                                 menuPriceLabelText: String(response.menuList?.price ?? 0))
+        
+        viewController?.displayMenuUI(viewModel: viewModel)
+    }
 }

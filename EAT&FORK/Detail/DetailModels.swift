@@ -34,4 +34,44 @@ enum Detail
         var basketmenuCountLabelText: String
     }
   }
+    
+    enum setUpUI
+    {
+        struct Request
+        {
+            var menuList: Main.getMenu.ViewModel?
+        }
+        struct Response
+        {
+            var menuList: Main.getMenu.ViewModel?
+        }
+        
+        struct ViewModel
+        {
+            var menuImageURL: String
+            var totalPriceLabelText: String
+            var menuNameLabelText: String
+            var menuDescLabelText: String
+            var menuPriceLabelText: String
+        }
+        
+    }
+    
+    enum addToBasket
+    {
+        struct Request
+        {
+           
+        }
+        struct Response
+        {
+            
+        }
+        
+        struct ViewModel
+        {
+          
+        }
+        
+    }
 }
