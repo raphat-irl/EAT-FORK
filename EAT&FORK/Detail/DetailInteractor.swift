@@ -18,6 +18,7 @@ protocol DetailBusinessLogic
     func setupUI(request: Detail.setUpUI.Request)
     func addToBasket(request: Detail.addToBasket.Request)
     func increaseButton(request:Detail.increaseButton.Request)
+    func decreaseButton(request:Detail.decreaseButton.Request)
 }
 
 protocol DetailDataStore
@@ -85,6 +86,23 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore
         let response = Detail.increaseButton.Response(wantedQuantity: wantedQuantity, minusButtonIsEnabled: minusminusButtonIsEnabled)
         
         presenter?.presentIncreaseButton(response: response)
+    }
+    
+    func decreaseButton(request:Detail.decreaseButton.Request){
+        
+        var wantedQuantity: Int = request.wantedQuantity
+        var minusminusButtonIsEnabled: Bool
+        
+        if wantedQuantity == 1{
+            minusminusButtonIsEnabled = false
+        } else {
+            minusminusButtonIsEnabled = true
+            wantedQuantity -= 1
+        }
+        
+        let response = Detail.decreaseButton.Response(wantedQuantity: wantedQuantity, minusButtonIsEnabled: minusminusButtonIsEnabled)
+        
+        presenter?.presentDecreaseButton(response: response)
     }
     
     

@@ -45,7 +45,7 @@ class MainRouter: NSObject, MainRoutingLogic, MainDataPassing
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "PaymentViewController")
         as! PaymentViewController
         destinationVC.delegate = viewController
-        destinationVC.addMenu = data
+        destinationVC.addMenu = data.filter({$0.menu.id != 0})
         
         self.viewController?.navigationController?.present(destinationVC,animated: true)
     }
