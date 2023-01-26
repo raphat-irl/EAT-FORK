@@ -16,6 +16,8 @@ protocol DetailDisplayLogic: AnyObject
 {
     func displayBasketUI(viewModel: Detail.calculateBasketUI.ViewModel)
     func displayMenuUI(viewModel: Detail.setUpUI.ViewModel)
+    func displayaddToBasKet(viewModel: Detail.addToBasket.ViewModel)
+    func displayIncreaseButton(viewModel: Detail.increaseButton.ViewModel)
 }
 
 protocol DetailDelegate {
@@ -101,10 +103,14 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
         
   // MARK: Do something
     
+    @IBAction func addToBasketButtonTapped(_ sender:UIButton){
+        
+        addToBasket()
+
+    }
+    
     @IBAction func plusButtonTapped(_ sender:UIButton){
-        wantedQuantity += 1
-        menuCountLabel.text = String(wantedQuantity)
-        minusButton.isEnabled = true
+        increaseButton()
     }
     
     @IBAction func minusButtonTapped(_ sender:UIButton){
@@ -117,26 +123,6 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
         }
     }
     
-    @IBAction func addToBasketButtonTapped(_ sender:UIButton){
-        
-        guard let menu = menuList else { return }
-        if let existingMenu = addMenu.first(where: {$0.menu.id == menu.id}){
-            existingMenu.quantity += wantedQuantity
-        } else {
-            let newMenu = Main.MainModels.MenuQuantity(menu: menu, quantity: wantedQuantity)
-            addMenu.append(newMenu)
-            
-        }
-//        //test
-//        for items in addMenu{
-//        print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
-//        print(menuSumQuantity)
-//        }
-        
-        delegate?.addMenuFromDetail(menu: addMenu)
-        router?.dismissToMain()
-    }
-           
     @IBAction func onCloseButtonTapped(_ sender:UIButton){
         router?.dismissToMain()
     }
@@ -170,6 +156,29 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
         menuNameLabel.text = viewModel.menuNameLabelText
         menuDescLabel.text = viewModel.menuDescLabelText
         menuPriceLabel.text = viewModel.menuPriceLabelText
+    }
+    
+    func addToBasket(){
+        let request = Detail.addToBasket.Request(menuList: menuList, addMenu: addMenu, wantedQuantity: wantedQuantity)
+        interactor?.addToBasket(request: request)
+    }
+    
+    func displayaddToBasKet(viewModel: Detail.addToBasket.ViewModel){
+        addMenu.append(viewModel.newMenu)
+        wantedQuantity = viewModel.wantedQuantity
+        delegate?.addMenuFromDetail(menu: addMenu)
+        router?.dismissToMain()
+    }
+    
+    func increaseButton(){
+        let request = Detail.increaseButton.Request(wantedQuantity: wantedQuantity)
+        interactor?.increaseButton(request: request)
+    }
+    
+    func displayIncreaseButton(viewModel: Detail.increaseButton.ViewModel) {
+        wantedQuantity = viewModel.wantedQuantity
+        menuCountLabel.text = String(viewModel.wantedQuantity)
+        minusButton.isEnabled = viewModel.minusButtonIsEnabled
     }
 }
 

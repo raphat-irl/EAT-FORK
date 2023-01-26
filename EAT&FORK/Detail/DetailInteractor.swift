@@ -16,6 +16,8 @@ protocol DetailBusinessLogic
 {
     func setupBasketUI(request: Detail.calculateBasketUI.Request)
     func setupUI(request: Detail.setUpUI.Request)
+    func addToBasket(request: Detail.addToBasket.Request)
+    func increaseButton(request:Detail.increaseButton.Request)
 }
 
 protocol DetailDataStore
@@ -52,8 +54,39 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore
         
         let response = Detail.setUpUI.Response(menuList: request.menuList)
         
-        presenter?.prsentMenuUI(response: response)
+        presenter?.presentMenuUI(response: response)
         
     }
+    
+    func addToBasket(request: Detail.addToBasket.Request){
+        
+        let wantedQuantity: Int = request.wantedQuantity
+    
+        var newMenu = Main.MainModels.MenuQuantity(menu: Main.getMenu.ViewModel(id: 0, name: "", desc: "", url: "", price: 0, image_url: ""), quantity: 0)
+        
+        guard let menu = request.menuList else { return }
+        if let existingMenu = request.addMenu.first(where: {$0.menu.id == menu.id}){
+            existingMenu.quantity += wantedQuantity
+        } else {
+            newMenu = Main.MainModels.MenuQuantity(menu: menu, quantity: wantedQuantity)
+            
+        }
+        let response = Detail.addToBasket.Response(newMenu: newMenu, wantedQuantity: wantedQuantity)
+        
+        presenter?.presentAddtoBasket(response: response)
+    }
+    
+    func increaseButton(request:Detail.increaseButton.Request){
+        
+        var wantedQuantity: Int = request.wantedQuantity
+        wantedQuantity += 1
+        let minusminusButtonIsEnabled: Bool = true
+        
+        let response = Detail.increaseButton.Response(wantedQuantity: wantedQuantity, minusButtonIsEnabled: minusminusButtonIsEnabled)
+        
+        presenter?.presentIncreaseButton(response: response)
+    }
+    
+    
    
 }

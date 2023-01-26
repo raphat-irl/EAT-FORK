@@ -503,7 +503,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รวมค่าอาหาร" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIE-2J-NJZ">
-                                            <rect key="frame" x="8" y="8" width="85" height="17"/>
+                                            <rect key="frame" x="8" y="8" width="87.5" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="IPt-Sg-sTG"/>
                                             </constraints>
@@ -512,7 +512,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ค่าบริการ 10%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUI-ry-H38">
-                                            <rect key="frame" x="8" y="37" width="85" height="17"/>
+                                            <rect key="frame" x="8" y="37" width="87.5" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="rOc-cS-YH8"/>
                                             </constraints>
@@ -521,7 +521,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ภาษี 7%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLC-5d-LqE">
-                                            <rect key="frame" x="8" y="66" width="85" height="17"/>
+                                            <rect key="frame" x="8" y="66" width="87.5" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="xEc-Zh-dNR"/>
                                             </constraints>
@@ -530,7 +530,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ราคารวม" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tx7-e4-Vuc">
-                                            <rect key="frame" x="8" y="95" width="206" height="17"/>
+                                            <rect key="frame" x="8" y="95" width="208.5" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="IQi-5z-UX5"/>
                                             </constraints>
@@ -569,7 +569,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ev-x2-F7F">
-                                            <rect key="frame" x="93" y="8" width="308" height="17"/>
+                                            <rect key="frame" x="95.5" y="8" width="305.5" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="GTq-X2-zST"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wNX-Xt-Fjo"/>

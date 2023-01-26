@@ -116,7 +116,8 @@ class MainViewController: UIViewController, MainDisplayLogic, UISearchBarDelegat
         super.viewWillAppear(animated)
         menuView.reloadData()
         menuViewColletion.reloadData()
-        changeToTableViewCellButton.backgroundColor = HexColor.color(hex: "DCB042")
+//        changeToTableViewCellButton.backgroundColor = HexColor.color(hex: "DCB042")
+        setupsearchController()
         
     }
   
@@ -126,7 +127,8 @@ class MainViewController: UIViewController, MainDisplayLogic, UISearchBarDelegat
     getMenu()
     setupUI()
     setupsearchController()
-  
+      
+    changeToTableViewCellButton.backgroundColor = HexColor.color(hex: "DCB042")
     changeToTableViewCellButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     changeToColletionViewCellButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
       
@@ -189,6 +191,7 @@ class MainViewController: UIViewController, MainDisplayLogic, UISearchBarDelegat
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "ค้นหาเมนู"
         searchController.searchBar.delegate = self
+        searchController.searchBar.isHidden = false
         
         navigationItem.searchController = searchController
     
@@ -248,10 +251,6 @@ extension MainViewController: UITableViewDataSource,UITableViewDelegate {
                 cell.menuSumPrice += items.menu.price * items.quantity
                 cell.menuSumQuantity += items.quantity
                 summaryPriceLabel.text = "฿\(String(format: "%d", cell.menuSumPrice)).00 "
-                
-                print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
-                print(cell.menuSumPrice)
-                print(cell.menuSumQuantity)
             }
         }
     }
@@ -310,9 +309,6 @@ extension MainViewController:UICollectionViewDataSource
                 cell.menuSumPrice += items.menu.price * items.quantity
                 cell.menuSumQuantity += items.quantity
                 summaryPriceLabel.text = "฿\(String(format: "%d", cell.menuSumPrice)).00 "
-                print("Menu: \(items.menu.name), Price: \(items.menu.price), Quantity:\(items.quantity)")
-                print(cell.menuSumPrice)
-                print(cell.menuSumQuantity)
             }
         }
 

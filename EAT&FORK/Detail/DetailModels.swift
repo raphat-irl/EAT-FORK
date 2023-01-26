@@ -61,17 +61,39 @@ enum Detail
     {
         struct Request
         {
-           
+            var menuList: Main.getMenu.ViewModel?
+            var addMenu: [Main.MainModels.MenuQuantity]
+            var wantedQuantity: Int
         }
         struct Response
         {
-            
+            var newMenu: Main.MainModels.MenuQuantity
+            var wantedQuantity: Int
         }
         
         struct ViewModel
         {
-          
+            var newMenu: Main.MainModels.MenuQuantity
+            var wantedQuantity: Int
+        }
+    }
+    
+    enum increaseButton
+    {
+        struct Request
+        {
+           var wantedQuantity: Int
+        }
+        struct Response
+        {
+            var wantedQuantity: Int
+            var minusButtonIsEnabled: Bool
         }
         
+        struct ViewModel
+        {
+            var minusButtonIsEnabled: Bool
+            var wantedQuantity: Int
+        }
     }
 }

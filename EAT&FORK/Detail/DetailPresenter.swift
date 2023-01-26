@@ -16,7 +16,9 @@ import Kingfisher
 protocol DetailPresentationLogic
 {
   func presentBasketUI(response: Detail.calculateBasketUI.Response)
-  func prsentMenuUI(response: Detail.setUpUI.Response)
+  func presentMenuUI(response: Detail.setUpUI.Response)
+  func presentAddtoBasket(response: Detail.addToBasket.Response)
+  func presentIncreaseButton(response: Detail.increaseButton.Response)
 }
 
 class DetailPresenter: DetailPresentationLogic
@@ -30,11 +32,11 @@ class DetailPresenter: DetailPresentationLogic
       let viewModel = Detail.calculateBasketUI.ViewModel(basketPriceLabelText:
                                                                 "฿\(String(response.menuSumPrice))",
                                                         basketmenuCountLabelText:                   String(response.menuSumQuantity))
-      
+
       viewController?.displayBasketUI(viewModel: viewModel)
   }
     
-    func prsentMenuUI(response: Detail.setUpUI.Response)
+    func presentMenuUI(response: Detail.setUpUI.Response)
     {
         let viewModel = Detail.setUpUI.ViewModel(menuImageURL: String(response.menuList?.image_url ?? ""),
                                                  totalPriceLabelText: String(response.menuList?.price ?? 0),
@@ -43,5 +45,18 @@ class DetailPresenter: DetailPresentationLogic
                                                  menuPriceLabelText: String(response.menuList?.price ?? 0))
         
         viewController?.displayMenuUI(viewModel: viewModel)
+    }
+    
+    func presentAddtoBasket(response: Detail.addToBasket.Response){
+        
+        let viewModel = Detail.addToBasket.ViewModel(newMenu: response.newMenu, wantedQuantity: response.wantedQuantity)
+        
+        viewController?.displayaddToBasKet(viewModel: viewModel)
+    }
+    
+    func presentIncreaseButton(response: Detail.increaseButton.Response){
+        let viewModel = Detail.increaseButton.ViewModel(minusButtonIsEnabled: response.minusButtonIsEnabled,                                              wantedQuantity: response.wantedQuantity)
+        
+        viewController?.displayIncreaseButton(viewModel: viewModel)
     }
 }
