@@ -96,23 +96,4 @@ enum Detail
             var wantedQuantity: Int
         }
     }
-    
-    enum decreaseButton
-    {
-        struct Request
-        {
-           var wantedQuantity: Int
-        }
-        struct Response
-        {
-            var wantedQuantity: Int
-            var minusButtonIsEnabled: Bool
-        }
-        
-        struct ViewModel
-        {
-            var minusButtonIsEnabled: Bool
-            var wantedQuantity: Int
-        }
-    }
 }
